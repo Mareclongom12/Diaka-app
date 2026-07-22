@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://ton-domaine.com/api'
+  apiUrl: 'https://diaka-api.onrender.com/api'
 };
