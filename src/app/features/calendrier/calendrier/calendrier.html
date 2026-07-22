@@ -1,0 +1,68 @@
+<div class="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white">
+  <div class="max-w-3xl mx-auto p-4 sm:p-6 py-8 sm:py-10">
+    <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6">Calendrier Hijri</h1>
+
+    <div class="bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-5 sm:p-7 mb-6">
+      <div class="flex items-center justify-between mb-5">
+        <button (click)="previousMonth()" class="flex items-center justify-center w-9 h-9 rounded-full text-gray-500 hover:bg-gray-50 hover:text-emerald-700 transition-colors" aria-label="Mois précédent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+        </button>
+
+        <div class="text-center">
+          <p class="font-bold text-gray-900 text-base sm:text-lg">{{ monthName() }} {{ viewedYear() }}</p>
+          <button (click)="goToToday()" class="text-xs text-emerald-600 font-medium hover:underline">Aujourd'hui</button>
+        </div>
+
+        <button (click)="nextMonth()" class="flex items-center justify-center w-9 h-9 rounded-full text-gray-500 hover:bg-gray-50 hover:text-emerald-700 transition-colors" aria-label="Mois suivant">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-7 gap-1 mb-1">
+        @for (wd of weekDays; track wd) {
+          <div class="text-center text-[10px] sm:text-xs font-semibold text-gray-400 uppercase py-1">{{ wd }}</div>
+        }
+      </div>
+
+      <div class="grid grid-cols-7 gap-1">
+        @for (blank of leadingBlanks(); track $index) {
+          <div></div>
+        }
+        @for (day of days(); track day.hijriDay) {
+          <div
+            class="aspect-square flex flex-col items-center justify-center rounded-lg text-xs sm:text-sm"
+            [class.bg-gradient-to-br]="day.isToday"
+            [class.from-emerald-500]="day.isToday"
+            [class.to-teal-600]="day.isToday"
+            [class.text-white]="day.isToday"
+            [class.font-bold]="day.isToday"
+            [class.text-gray-700]="!day.isToday"
+            [class.hover:bg-emerald-50]="!day.isToday"
+          >
+            <span>{{ day.hijriDay }}</span>
+            <span class="text-[9px] sm:text-[10px] opacity-70">{{ formatShort(day.gregorianDate) }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Prochains évènements</h2>
+    <div class="space-y-2">
+      @for (event of importantDates(); track event.name) {
+        <div class="flex items-center justify-between gap-3 p-3.5 sm:p-4 bg-white rounded-xl border border-emerald-50 shadow-sm">
+          <div class="min-w-0">
+            <p class="font-medium text-gray-800 text-sm sm:text-base">{{ event.name }}</p>
+            <p class="text-xs text-gray-500 truncate">{{ event.description }}</p>
+          </div>
+          <span class="text-xs sm:text-sm font-semibold text-emerald-700 shrink-0">{{ formatFull(event.gregorianDate) }}</span>
+        </div>
+      } @empty {
+        <p class="text-gray-400 text-sm">Aucun évènement à venir cette année.</p>
+      }
+    </div>
+
+    <p class="text-xs text-gray-400 mt-6 text-center">
+      Les dates hijri sont calculées de façon algorithmique et peuvent varier de ±1 jour par rapport à l'observation officielle de la lune selon les pays.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,129 @@
+<div class="relative min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white overflow-hidden flex items-center justify-center p-4 py-10">
+  <svg class="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="registerPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+        <g stroke="#0d9488" stroke-width="1.5" fill="none">
+          <path d="M40 5 L52 20 L40 35 L28 20 Z" />
+          <path d="M40 45 L52 60 L40 75 L28 60 Z" />
+          <path d="M5 40 L20 28 L35 40 L20 52 Z" />
+          <path d="M45 40 L60 28 L75 40 L60 52 Z" />
+          <circle cx="40" cy="40" r="6" />
+        </g>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#registerPattern)" />
+  </svg>
+
+  <div class="relative w-full max-w-sm">
+    <div class="text-center mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="w-14 h-14 mx-auto mb-3">
+        <defs>
+          <linearGradient id="registerLogoGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#10b981" />
+            <stop offset="100%" stop-color="#0d9488" />
+          </linearGradient>
+        </defs>
+        <circle cx="20" cy="20" r="20" fill="url(#registerLogoGrad)" />
+        <path d="M20 11c-2.8-1.6-6.2-2-9-1v15c2.8-1 6.2-0.6 9 1 2.8-1.6 6.2-2 9-1V10c-2.8-1-6.2-0.6-9 1Z" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round" />
+        <line x1="20" y1="11" x2="20" y2="27" stroke="#ffffff" stroke-width="1.6" />
+      </svg>
+      <h1 class="text-2xl font-bold text-gray-900">Créer un compte</h1>
+      <p class="text-sm text-gray-500 mt-1">Rejoins DIAKA pour sauvegarder tes favoris</p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg shadow-emerald-100/50 border border-emerald-50 p-6 sm:p-7">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1.5">Nom</label>
+          <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+            </svg>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              class="w-full pl-10 pr-3.5 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow"
+            />
+          </div>
+          @if (form.controls.name.invalid && form.controls.name.touched) {
+            <p class="text-red-600 text-xs mt-1.5">Nom requis (2 caractères minimum).</p>
+          }
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+          <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+              <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 5L2 7" />
+            </svg>
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              class="w-full pl-10 pr-3.5 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow"
+            />
+          </div>
+          @if (form.controls.email.invalid && form.controls.email.touched) {
+            <p class="text-red-600 text-xs mt-1.5">Email invalide.</p>
+          }
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700 mb-1.5">Mot de passe</label>
+          <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+              <rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <input
+              id="password"
+              type="password"
+              formControlName="password"
+              class="w-full pl-10 pr-3.5 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow"
+            />
+          </div>
+          @if (form.controls.password.invalid && form.controls.password.touched) {
+            <p class="text-red-600 text-xs mt-1.5">6 caractères minimum.</p>
+          }
+        </div>
+
+        <div>
+          <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-1.5">Confirmer le mot de passe</label>
+          <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+              <rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <input
+              id="password_confirmation"
+              type="password"
+              formControlName="password_confirmation"
+              class="w-full pl-10 pr-3.5 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-shadow"
+            />
+          </div>
+          @if (form.errors?.['passwordsMismatch'] && form.controls.password_confirmation.touched) {
+            <p class="text-red-600 text-xs mt-1.5">Les mots de passe ne correspondent pas.</p>
+          }
+        </div>
+
+        @if (errorMessage()) {
+          <div class="bg-red-50 border border-red-100 rounded-xl px-3.5 py-2.5">
+            <p class="text-red-600 text-sm">{{ errorMessage() }}</p>
+          </div>
+        }
+
+        <button
+          type="submit"
+          [disabled]="loading()"
+          class="w-full bg-emerald-600 text-white py-3 rounded-xl font-semibold shadow-lg shadow-emerald-200 hover:bg-emerald-700 hover:shadow-emerald-300 transition-all disabled:opacity-50 disabled:shadow-none"
+        >
+          {{ loading() ? 'Création...' : 'Créer mon compte' }}
+        </button>
+      </form>
+    </div>
+
+    <p class="text-sm text-gray-500 text-center mt-6">
+      Déjà un compte ?
+      <a routerLink="/login" class="text-emerald-700 font-medium hover:underline">Se connecter</a>
+    </p>
+  </div>
+</div>

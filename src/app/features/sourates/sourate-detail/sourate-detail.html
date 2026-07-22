@@ -1,0 +1,160 @@
+@if (sourate(); as s) {
+  <div class="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white">
+    <div class="max-w-3xl mx-auto p-4 sm:p-6">
+      <a routerLink="/sourates" class="inline-flex items-center gap-2 text-emerald-700 text-sm font-medium mb-4 group">
+      <span class="flex items-center justify-center w-7 h-7 rounded-full bg-white shadow-sm group-hover:bg-emerald-50 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
+      </span>
+        Retour aux sourates
+      </a>
+
+      <div class="bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-5 sm:p-7 mb-5 sm:mb-6">
+        <div class="flex items-start justify-between gap-2 mb-1">
+          <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+            <span class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white font-bold text-sm sm:text-base shrink-0">{{ s.numero }}</span>
+            <h1 class="text-lg sm:text-2xl font-bold text-gray-900 truncate">{{ s.nom_francais }}</h1>
+            <button (click)="toggleFavori()" class="text-xl sm:text-2xl transition-transform hover:scale-110 shrink-0" [attr.aria-label]="favoriService.isFavori(s.id) ? 'Retirer des favoris' : 'Ajouter aux favoris'">
+              @if (favoriService.isFavori(s.id)) {
+                <span class="text-emerald-600">★</span>
+              } @else {
+                <span class="text-gray-300">☆</span>
+              }
+            </button>
+          </div>
+          <span class="text-xl sm:text-3xl text-emerald-700 shrink-0" dir="rtl">{{ s.nom_arabe }}</span>
+        </div>
+        <p class="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-5 ml-11 sm:ml-13">{{ s.nombre_versets }} versets · {{ s.revelation }}</p>
+
+        @if (reciters().length > 0) {
+          <div class="mb-4">
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Récitateur</p>
+            <div class="flex flex-wrap gap-1.5 sm:gap-2">
+              @for (reciter of reciters(); track reciter.identifier) {
+                <button
+                  (click)="selectReciter(reciter.identifier)"
+                  class="px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all border"
+                  [class.bg-gradient-to-r]="selectedReciterIdentifier() === reciter.identifier"
+                  [class.from-emerald-500]="selectedReciterIdentifier() === reciter.identifier"
+                  [class.to-teal-600]="selectedReciterIdentifier() === reciter.identifier"
+                  [class.text-white]="selectedReciterIdentifier() === reciter.identifier"
+                  [class.border-transparent]="selectedReciterIdentifier() === reciter.identifier"
+                  [class.shadow-sm]="selectedReciterIdentifier() === reciter.identifier"
+                  [class.bg-white]="selectedReciterIdentifier() !== reciter.identifier"
+                  [class.text-gray-600]="selectedReciterIdentifier() !== reciter.identifier"
+                  [class.border-gray-200]="selectedReciterIdentifier() !== reciter.identifier"
+                >
+                  {{ reciter.nom }}
+                </button>
+              }
+            </div>
+          </div>
+        }
+
+        <div class="flex items-center gap-3 flex-wrap">
+          <button (click)="togglePlayback()" class="flex items-center gap-2 bg-emerald-600 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm sm:text-base font-semibold shadow-lg shadow-emerald-200 hover:bg-emerald-700 hover:shadow-emerald-300 transition-all">
+            @if (isPlaying()) {
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" /><rect x="14" y="4" width="4" height="16" /></svg>
+              Pause
+            } @else {
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              Écouter et lire
+            }
+          </button>
+
+          @if (isFullyDownloaded()) {
+            <a routerLink="/telechargements" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium border border-emerald-200 bg-emerald-50 text-emerald-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+              Voir les téléchargements
+            </a>
+          } @else if (offlineAudio.downloadingUrl()) {
+            <div class="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
+              <div class="w-24 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-600 rounded-full transition-all" [style.width.%]="offlineAudio.downloadProgress()"></div>
+              </div>
+              {{ offlineAudio.downloadProgress() }}%
+            </div>
+          } @else {
+            <button (click)="downloadSourate()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium border border-gray-200 text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
+              Télécharger
+            </button>
+          }
+
+          @if (currentVerseIndex() >= 0) {
+            <span class="text-xs sm:text-sm text-gray-400 font-medium ml-auto">
+          Verset {{ currentVerseIndex() + 1 }} / {{ verses().length }}
+        </span>
+          }
+        </div>
+
+        @if (currentVerseIndex() >= 0) {
+          <div class="mt-4 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+            <div
+              class="h-full bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full transition-all duration-300"
+              [style.width.%]="((currentVerseIndex() + 1) / verses().length) * 100"
+            ></div>
+          </div>
+        }
+      </div>
+
+      @if (versesLoading()) {
+        <div class="space-y-2 sm:space-y-3">
+          @for (i of [1,2,3,4,5]; track i) {
+            <div class="rounded-2xl border border-emerald-50 p-4 sm:p-5 bg-white animate-pulse">
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-200 shrink-0"></div>
+                <div class="h-5 bg-gray-200 rounded flex-1"></div>
+              </div>
+              <div class="h-3 bg-gray-100 rounded w-2/3 ml-auto"></div>
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="space-y-2 sm:space-y-3">
+          @for (verse of verses(); track verse.numero; let i = $index) {
+            <div
+              #verseEl
+              (click)="playVerse(i)"
+              class="rounded-2xl border p-4 sm:p-5 cursor-pointer transition-all"
+              [class.bg-emerald-50]="currentVerseIndex() === i"
+              [class.border-emerald-200]="currentVerseIndex() === i"
+              [class.shadow-sm]="currentVerseIndex() === i"
+              [class.bg-white]="currentVerseIndex() !== i"
+              [class.border-emerald-50]="currentVerseIndex() !== i"
+            >
+              <div class="flex items-start justify-between gap-3 mb-2.5">
+          <span
+            class="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full text-xs font-bold shrink-0"
+            [class.bg-gradient-to-br]="currentVerseIndex() === i"
+            [class.from-emerald-500]="currentVerseIndex() === i"
+            [class.to-teal-600]="currentVerseIndex() === i"
+            [class.text-white]="currentVerseIndex() === i"
+            [class.bg-emerald-50]="currentVerseIndex() !== i"
+            [class.text-emerald-700]="currentVerseIndex() !== i"
+          >
+            {{ verse.numero }}
+          </span>
+                <p class="text-lg sm:text-xl text-gray-800 text-right flex-1 leading-loose" dir="rtl">{{ verse.arabe }}</p>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">{{ verse.francais }}</p>
+            </div>
+          }
+        </div>
+      }
+    </div>
+
+    @if (showBackToTop()) {
+      <button
+        (click)="scrollToTop()"
+        class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-300 hover:scale-105 transition-transform z-10"
+        aria-label="Retour en haut"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m18 15-6-6-6 6" />
+        </svg>
+      </button>
+    }
+  </div>
+} @else {
+  <div class="max-w-3xl mx-auto p-6 text-gray-500">Sourate introuvable.</div>
+}

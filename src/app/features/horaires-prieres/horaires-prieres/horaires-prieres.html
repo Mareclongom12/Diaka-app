@@ -1,0 +1,96 @@
+<div class="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white">
+  <div class="max-w-2xl mx-auto p-4 sm:p-6 py-8 sm:py-10">
+    <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center">Horaires de Prière</h1>
+
+    @if (prayerTimesService.loading()) {
+      <div class="bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-8 text-center animate-pulse">
+        <p class="text-gray-400 text-sm">Localisation et récupération des horaires...</p>
+      </div>
+    } @else if (prayerTimesService.error()) {
+      <div class="bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-8 text-center">
+        <p class="text-red-600 text-sm mb-4">{{ prayerTimesService.error() }}</p>
+        <button (click)="retry()" class="px-4 py-2 rounded-full bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 transition-colors">
+          Réessayer
+        </button>
+      </div>
+    } @else {
+      <!-- Position + prochaine prière -->
+      <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl shadow-lg shadow-emerald-200 p-6 sm:p-8 text-center text-white mb-5">
+        @if (prayerTimesService.locationLabel()) {
+          <p class="text-xs sm:text-sm text-emerald-50 mb-3 flex items-center justify-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+            {{ prayerTimesService.locationLabel() }}
+          </p>
+        }
+
+        @if (prayerTimesService.nextPrayer(); as next) {
+          <p class="text-xs sm:text-sm text-emerald-50 mb-1">Prochaine prière</p>
+          <p class="text-2xl sm:text-3xl font-bold mb-1">{{ next.prayer.label }} — {{ next.prayer.time }}</p>
+          <p class="text-sm text-emerald-50">dans {{ formatMinutesLeft(next.minutesLeft) }}</p>
+        }
+      </div>
+
+      <!-- Liste des prières -->
+      <div class="bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 divide-y divide-gray-50 mb-5">
+        @for (prayer of prayerTimesService.prayerTimes(); track prayer.name) {
+          <div
+            class="flex items-center justify-between px-5 py-3.5 sm:py-4"
+            [class.bg-emerald-50]="prayerTimesService.currentPrayer()?.name === prayer.name"
+          >
+            <span
+              class="font-medium text-sm sm:text-base"
+              [class.text-emerald-700]="prayerTimesService.currentPrayer()?.name === prayer.name"
+              [class.text-gray-700]="prayerTimesService.currentPrayer()?.name !== prayer.name"
+            >
+              {{ prayer.label }}
+              @if (prayerTimesService.currentPrayer()?.name === prayer.name) {
+                <span class="text-xs text-emerald-500 font-normal ml-1">(en cours)</span>
+              }
+            </span>
+            <span class="font-semibold text-sm sm:text-base text-gray-800">{{ prayer.time }}</span>
+          </div>
+        }
+      </div>
+
+      <!-- Réglages -->
+      <div class="bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-5 space-y-4">
+        <div>
+          <label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 block">Méthode de calcul</label>
+          <select
+            (change)="onMethodChange($event)"
+            class="w-full px-3 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          >
+            @for (method of methods; track method.id) {
+              <option [value]="method.id" [selected]="prayerTimesService.calculationMethod() === method.id">
+                {{ method.label }}
+              </option>
+            }
+          </select>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm font-medium text-gray-800">Notifications</p>
+            <p class="text-xs text-gray-400">Recevoir un rappel à l'heure de chaque prière (onglet ouvert)</p>
+          </div>
+          <button
+            (click)="toggleNotifications()"
+            class="relative w-12 h-6.5 rounded-full transition-colors shrink-0"
+            [class.bg-emerald-600]="notifService.enabled()"
+            [class.bg-gray-200]="!notifService.enabled()"
+          >
+            <span
+              class="absolute top-0.5 w-5.5 h-5.5 bg-white rounded-full shadow transition-transform"
+              [class.translate-x-6]="notifService.enabled()"
+              [class.translate-x-0.5]="!notifService.enabled()"
+            ></span>
+          </button>
+        </div>
+
+        @if (notifService.permission() === 'denied') {
+          <p class="text-xs text-red-500">Les notifications sont bloquées dans les réglages de ton navigateur pour ce site.</p>
+        }
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,114 @@
+<div class="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white">
+  <div class="max-w-2xl mx-auto p-4 sm:p-6 py-8 sm:py-10">
+    <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center">Compteur de Dhikr</h1>
+
+    <!-- Sélection du dhikr -->
+    <div class="flex flex-wrap justify-center gap-2 mb-6">
+      @for (phrase of dhikrService.phrases; track phrase.id) {
+        <button
+          (click)="selectPhrase(phrase.id)"
+          class="px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all border"
+          [class.bg-gradient-to-r]="dhikrService.selectedPhraseId() === phrase.id"
+          [class.from-emerald-500]="dhikrService.selectedPhraseId() === phrase.id"
+          [class.to-teal-600]="dhikrService.selectedPhraseId() === phrase.id"
+          [class.text-white]="dhikrService.selectedPhraseId() === phrase.id"
+          [class.border-transparent]="dhikrService.selectedPhraseId() === phrase.id"
+          [class.shadow-sm]="dhikrService.selectedPhraseId() === phrase.id"
+          [class.bg-white]="dhikrService.selectedPhraseId() !== phrase.id"
+          [class.text-gray-600]="dhikrService.selectedPhraseId() !== phrase.id"
+          [class.border-gray-200]="dhikrService.selectedPhraseId() !== phrase.id"
+        >
+          {{ phrase.translitteration }}
+        </button>
+      }
+    </div>
+
+    <!-- Carte principale -->
+    <div class="bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-6 sm:p-8 text-center">
+      <p class="text-2xl sm:text-3xl text-emerald-700 mb-1" dir="rtl">{{ dhikrService.selectedPhrase().arabe }}</p>
+      <p class="text-xs sm:text-sm text-gray-500 mb-6">{{ dhikrService.selectedPhrase().traduction }}</p>
+
+      <!-- Anneau de progression + bouton tap -->
+      <button
+        (click)="tap()"
+        class="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto mb-6 flex items-center justify-center select-none active:scale-95 transition-transform"
+        aria-label="Compter un dhikr"
+      >
+        <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="90" fill="none" stroke="#e5e7eb" stroke-width="10" />
+          <circle
+            cx="100" cy="100" r="90" fill="none"
+            [attr.stroke]="dhikrService.isTargetReached() ? '#facc15' : '#0d9488'"
+            stroke-width="10"
+            stroke-linecap="round"
+            [attr.stroke-dasharray]="circumference"
+            [attr.stroke-dashoffset]="dashOffset(dhikrService.progress())"
+            class="transition-all duration-200"
+          />
+        </svg>
+        <div class="relative flex flex-col items-center justify-center w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg shadow-emerald-200">
+          <span class="text-4xl sm:text-5xl font-bold text-white">{{ dhikrService.count() }}</span>
+          <span class="text-xs sm:text-sm text-emerald-50">/ {{ dhikrService.target() }}</span>
+        </div>
+      </button>
+
+      @if (dhikrService.isTargetReached()) {
+        <p class="text-amber-600 font-semibold text-sm mb-4">✨ Objectif atteint, qu'Allah l'accepte !</p>
+      }
+
+      <!-- Choix de l'objectif -->
+      <div class="flex items-center justify-center gap-2 mb-5">
+        <span class="text-xs text-gray-400 font-medium mr-1">Objectif :</span>
+        @for (t of targetOptions; track t) {
+          <button
+            (click)="setTarget(t)"
+            class="px-3 py-1.5 rounded-full text-xs font-medium border transition-colors"
+            [class.bg-emerald-600]="dhikrService.target() === t"
+            [class.text-white]="dhikrService.target() === t"
+            [class.border-emerald-600]="dhikrService.target() === t"
+            [class.bg-white]="dhikrService.target() !== t"
+            [class.text-gray-600]="dhikrService.target() !== t"
+            [class.border-gray-200]="dhikrService.target() !== t"
+          >
+            {{ t }}
+          </button>
+        }
+      </div>
+
+      <button (click)="resetSession()" class="text-xs sm:text-sm text-gray-400 hover:text-red-500 transition-colors font-medium">
+        Réinitialiser cette session
+      </button>
+    </div>
+
+    <!-- Total cumulé -->
+    <div class="mt-5 flex items-center justify-between gap-3 p-4 bg-white rounded-xl border border-emerald-50 shadow-sm">
+      <div>
+        <p class="text-xs text-gray-400">Total cumulé pour "{{ dhikrService.selectedPhrase().translitteration }}"</p>
+        <p class="text-lg font-bold text-emerald-700">{{ dhikrService.totalForSelected() }}</p>
+      </div>
+      <button (click)="askResetTotal()" class="text-xs text-gray-400 hover:text-red-500 transition-colors font-medium shrink-0">
+        Remettre à zéro
+      </button>
+    </div>
+  </div>
+
+  @if (showResetConfirm()) {
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+      <div class="bg-white rounded-2xl shadow-xl max-w-sm w-full p-6 text-center">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-red-50 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg>
+        </div>
+        <p class="font-semibold text-gray-800 mb-1">Remettre le total à zéro ?</p>
+        <p class="text-sm text-gray-500 mb-6">Le total cumulé pour "{{ dhikrService.selectedPhrase().translitteration }}" sera définitivement effacé.</p>
+        <div class="flex gap-3">
+          <button (click)="cancelResetTotal()" class="flex-1 py-2.5 rounded-xl font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors">
+            Non
+          </button>
+          <button (click)="confirmResetTotal()" class="flex-1 py-2.5 rounded-xl font-semibold text-white bg-red-600 hover:bg-red-700 transition-colors">
+            Oui
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</div>

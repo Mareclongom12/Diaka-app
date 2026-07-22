@@ -1,0 +1,97 @@
+<div class="relative min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white overflow-hidden">
+  <svg class="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="quizPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+        <g stroke="#0d9488" stroke-width="1.5" fill="none">
+          <path d="M40 5 L52 20 L40 35 L28 20 Z" />
+          <path d="M40 45 L52 60 L40 75 L28 60 Z" />
+          <path d="M5 40 L20 28 L35 40 L20 52 Z" />
+          <path d="M45 40 L60 28 L75 40 L60 52 Z" />
+          <circle cx="40" cy="40" r="6" />
+        </g>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#quizPattern)" />
+  </svg>
+
+  <div class="relative max-w-2xl mx-auto p-4 sm:p-6 py-10 sm:py-14">
+    @if (!finished()) {
+      <div class="mb-6">
+        <div class="flex items-center justify-between text-sm text-gray-500 mb-2">
+          <span>Question {{ currentIndex() + 1 }} / {{ questions.length }}</span>
+          <span>Score : {{ score() }}</span>
+        </div>
+        <div class="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+          <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full transition-all duration-300" [style.width.%]="progress()"></div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-6 sm:p-8">
+        <h2 class="text-lg sm:text-xl font-bold text-gray-900 mb-6">{{ currentQuestion().question }}</h2>
+
+        <div class="space-y-2.5">
+          @for (option of currentQuestion().options; track option; let i = $index) {
+            <button
+              (click)="selectOption(i)"
+              class="w-full text-left px-4 py-3 rounded-xl border text-sm sm:text-base font-medium transition-all"
+              [class.bg-emerald-50]="showAnswer() && i === currentQuestion().correctIndex"
+              [class.border-emerald-400]="showAnswer() && i === currentQuestion().correctIndex"
+              [class.text-emerald-800]="showAnswer() && i === currentQuestion().correctIndex"
+              [class.bg-red-50]="showAnswer() && selectedOption() === i && i !== currentQuestion().correctIndex"
+              [class.border-red-300]="showAnswer() && selectedOption() === i && i !== currentQuestion().correctIndex"
+              [class.text-red-700]="showAnswer() && selectedOption() === i && i !== currentQuestion().correctIndex"
+              [class.bg-white]="!showAnswer() || (i !== currentQuestion().correctIndex && selectedOption() !== i)"
+              [class.border-gray-200]="!showAnswer() || (i !== currentQuestion().correctIndex && selectedOption() !== i)"
+              [class.text-gray-700]="!showAnswer() || (i !== currentQuestion().correctIndex && selectedOption() !== i)"
+              [class.hover:border-emerald-300]="!showAnswer()"
+            >
+              {{ option }}
+            </button>
+          }
+        </div>
+
+        @if (showAnswer()) {
+          <button (click)="nextQuestion()" class="w-full mt-6 bg-emerald-600 text-white py-3 rounded-xl font-semibold shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all">
+            {{ currentIndex() + 1 >= questions.length ? 'Voir le résultat' : 'Question suivante' }}
+          </button>
+        }
+      </div>
+    } @else {
+      <div class="relative bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-8 sm:p-10 text-center overflow-hidden">
+        @if (isCelebration()) {
+          <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            @for (i of confettiPieces; track i) {
+              <span
+                class="absolute top-0 w-2 h-2 rounded-sm confetti-piece"
+                [style.left]="confettiLeft(i)"
+                [style.background]="confettiColor(i)"
+                [style.animation-delay]="confettiDelay(i)"
+                [style.animation-duration]="confettiDuration(i)"
+              ></span>
+            }
+          </div>
+        }
+
+        <div class="relative w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-md shadow-emerald-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /><path d="M8.5 13.5 6 22l6-3 6 3-2.5-8.5" /></svg>
+        </div>
+        <p class="relative text-3xl font-bold text-gray-900 mb-1">{{ score() }} / {{ questions.length }}</p>
+        <p class="relative text-gray-500 mb-2">{{ resultMessage() }}</p>
+        @if (isCelebration()) {
+          <p class="relative text-emerald-600 font-semibold mb-6">🎉 Félicitations, excellent score !</p>
+        } @else {
+          <div class="mb-6"></div>
+        }
+
+        <div class="relative flex flex-col sm:flex-row gap-3">
+          <button (click)="restart()" class="flex-1 bg-emerald-600 text-white py-3 rounded-xl font-semibold shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all">
+            Recommencer
+          </button>
+          <a routerLink="/sourates" class="flex-1 bg-white text-emerald-700 py-3 rounded-xl font-semibold border-2 border-emerald-100 hover:bg-emerald-50 transition-all text-center">
+            Retour aux sourates
+          </a>
+        </div>
+      </div>
+    }
+  </div>
+</div>

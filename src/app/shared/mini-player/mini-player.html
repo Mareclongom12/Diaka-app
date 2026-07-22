@@ -1,0 +1,31 @@
+@if (player.sourate(); as s) {
+  <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-emerald-100 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-30">
+    <div class="h-1 bg-gray-100">
+      <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-600 transition-all duration-300" [style.width.%]="player.progress()"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex items-center gap-3">
+      <a [routerLink]="['/sourates', s.id]" class="flex items-center gap-3 min-w-0 flex-1">
+        <span class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white font-bold text-xs sm:text-sm shrink-0">{{ s.numero }}</span>
+        <div class="min-w-0">
+          <p class="font-semibold text-gray-800 text-sm truncate">{{ s.nomFrancais }}</p>
+          <p class="text-xs text-gray-500 truncate">
+            {{ player.reciterNom() }} · Verset {{ player.currentVerseIndex() + 1 }} / {{ player.verses().length }}
+          </p>
+        </div>
+      </a>
+
+      <button (click)="player.toggle()" class="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-emerald-600 text-white hover:bg-emerald-700 transition-colors shrink-0" [attr.aria-label]="player.isPlaying() ? 'Pause' : 'Lecture'">
+        @if (player.isPlaying()) {
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" /><rect x="14" y="4" width="4" height="16" /></svg>
+        } @else {
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+        }
+      </button>
+
+      <button (click)="close()" class="flex items-center justify-center w-8 h-8 rounded-full text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors shrink-0" aria-label="Fermer le lecteur">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+      </button>
+    </div>
+  </div>
+}
