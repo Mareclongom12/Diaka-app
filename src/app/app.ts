@@ -1,6 +1,7 @@
 import { Component, signal, inject, OnInit } from '@angular/core';
 import { Router, RouterOutlet, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs';
+import { inject as vercelInject } from '@vercel/analytics';
 import { Navbar } from './shared/navbar/navbar';
 import { MiniPlayer } from './shared/mini-player/mini-player';
 import { AuthService } from './core/services/auth';
@@ -23,6 +24,8 @@ export class App implements OnInit {
   showNavbar = signal(true);
 
   ngOnInit(): void {
+    vercelInject();
+
     if (this.authService.isLoggedIn()) {
       this.favoriService.loadFavoris();
     }

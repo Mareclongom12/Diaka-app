@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DIAKA</string>
+    <string name="title_activity_main">DIAKA</string>
+    <string name="package_name">com.diaka.app</string>
+    <string name="custom_url_scheme">com.diaka.app</string>
+</resources>
