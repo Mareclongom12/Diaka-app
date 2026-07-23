@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, shareReplay, tap } from 'rxjs';
 import { Sourate } from '../models/sourate.model';
 import { Audio } from '../models/audio.model';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

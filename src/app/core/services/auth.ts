@@ -2,7 +2,7 @@ import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { User, AuthResponse } from '../models/user.model';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { FavoriService } from './favori';
 
 @Injectable({
