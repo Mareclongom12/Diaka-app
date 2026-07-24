@@ -1,0 +1,107 @@
+{
+  "NAVBAR": {
+    "SOURATES": "Sourates",
+    "FAVORIS": "Favoris",
+    "DOWNLOADS": "Téléchargements",
+    "MORE": "Plus",
+    "QUIZ": "Quiz",
+    "CALENDAR": "Calendrier",
+    "ZIKR": "Zikr",
+    "PRAYERS": "Prières",
+    "ABLUTIONS": "Ablutions",
+    "PROFILE": "Mon profil",
+    "LOGOUT": "Déconnexion",
+    "LOGIN": "Connexion",
+    "LOGOUT_CONFIRM_TITLE": "Se déconnecter ?",
+    "LOGOUT_CONFIRM_TEXT": "Tu devras te reconnecter pour retrouver tes favoris.",
+    "CANCEL": "Annuler",
+    "LOGOUT_BUTTON": "Se déconnecter"
+  },
+  "LANDING": {
+    "TITLE": "Jàkka",
+    "SUBTITLE": "Écoute et lis le Saint Coran, sourate par sourate, avec plusieurs récitateurs et la traduction française verset par verset.",
+    "BROWSE_BUTTON": "Parcourir les sourates",
+    "CREATE_ACCOUNT_BUTTON": "Créer un compte",
+    "FEATURE_LISTEN_TITLE": "Écoute",
+    "FEATURE_LISTEN_DESC": "Plusieurs récitateurs au choix, streaming immédiat, aucune inscription requise.",
+    "FEATURE_READ_TITLE": "Lecture guidée",
+    "FEATURE_READ_DESC": "Texte arabe et traduction française, verset surligné en rythme avec la voix.",
+    "FEATURE_FAVORITES_TITLE": "Favoris",
+    "FEATURE_FAVORITES_DESC": "Marque tes sourates préférées et retrouve-les en un clic depuis ton compte.",
+    "FAQ_TITLE": "Questions fréquentes",
+    "FAQ_SUBTITLE": "Quelques repères simples sur l'islam et le Coran."
+  },
+  "LOGIN": {
+    "TITLE": "Bon retour",
+    "SUBTITLE": "Connecte-toi pour retrouver tes favoris",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_INVALID": "Email invalide.",
+    "PASSWORD_LABEL": "Mot de passe",
+    "PASSWORD_INVALID": "6 caractères minimum.",
+    "SUBMIT_LOADING": "Connexion...",
+    "SUBMIT": "Se connecter",
+    "NO_ACCOUNT": "Pas encore de compte ?",
+    "SIGNUP_LINK": "S'inscrire"
+  },
+  "REGISTER": {
+    "TITLE": "Créer un compte",
+    "SUBTITLE": "Rejoins Jàkka pour sauvegarder tes favoris",
+    "NAME_LABEL": "Nom",
+    "NAME_INVALID": "Nom requis (2 caractères minimum).",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_INVALID": "Email invalide.",
+    "PASSWORD_LABEL": "Mot de passe",
+    "PASSWORD_INVALID": "6 caractères minimum.",
+    "PASSWORD_CONFIRM_LABEL": "Confirmer le mot de passe",
+    "PASSWORD_MISMATCH": "Les mots de passe ne correspondent pas.",
+    "SUBMIT_LOADING": "Création...",
+    "SUBMIT": "Créer mon compte",
+    "HAS_ACCOUNT": "Déjà un compte ?",
+    "LOGIN_LINK": "Se connecter"
+  },
+  "DHIKR": {
+    "TITLE": "Compteur de Zikr",
+    "TARGET_REACHED": "✨ Objectif atteint, qu'Allah l'accepte !",
+    "TARGET_LABEL": "Objectif :",
+    "RESET_SESSION": "Réinitialiser cette session",
+    "TOTAL_FOR": "Total cumulé pour",
+    "RESET_TOTAL": "Remettre à zéro",
+    "RESET_MODAL_TITLE": "Remettre le total à zéro ?",
+    "RESET_MODAL_TEXT": "Le total cumulé pour",
+    "RESET_MODAL_TEXT_END": "sera définitivement effacé.",
+    "NO": "Non",
+    "YES": "Oui",
+    "TAP_ARIA": "Compter un dhikr"
+  },
+  "ABLUTIONS": {
+    "TITLE": "Guide des Ablutions (Wudu)",
+    "SUBTITLE": "Étape par étape, avec les invocations essentielles",
+    "TAB_GUIDE": "Guide pas à pas",
+    "TAB_LIST": "Vue d'ensemble",
+    "STEP_LABEL": "Étape",
+    "ONCE_ONLY": "À faire une seule fois",
+    "RECOMMENDED_TIMES": "× (recommandé)",
+    "RECOMMENDED_TIMES_LIST": "× recommandé",
+    "PREVIOUS": "Précédent",
+    "NEXT": "Suivant",
+    "RESTART": "Recommencer"
+  },
+  "FAVORIS": {
+    "TITLE": "Mes Favoris",
+    "EMPTY_TEXT": "Tu n'as pas encore de sourate favorite.",
+    "BROWSE_BUTTON": "Parcourir les sourates",
+    "VERSES": "versets"
+  },
+  "CALENDRIER": {
+    "TITLE": "Calendrier Hijri",
+    "TODAY": "Aujourd'hui",
+    "UPCOMING_EVENTS": "Prochains évènements",
+    "NO_EVENTS": "Aucun évènement à venir cette année.",
+    "FOOTER_NOTE": "Les dates hijri sont calculées de façon algorithmique et peuvent varier de ±1 jour par rapport à l'observation officielle de la lune selon les pays.",
+    "PREV_MONTH_ARIA": "Mois précédent",
+    "NEXT_MONTH_ARIA": "Mois suivant"
+  },
+  "COMMON": {
+    "LANGUAGE": "Langue"
+  }
+}

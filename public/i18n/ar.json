@@ -1,0 +1,107 @@
+{
+  "NAVBAR": {
+    "SOURATES": "السور",
+    "FAVORIS": "المفضلة",
+    "DOWNLOADS": "التنزيلات",
+    "MORE": "المزيد",
+    "QUIZ": "اختبار",
+    "CALENDAR": "التقويم",
+    "ZIKR": "الذكر",
+    "PRAYERS": "الصلوات",
+    "ABLUTIONS": "الوضوء",
+    "PROFILE": "ملفي الشخصي",
+    "LOGOUT": "تسجيل الخروج",
+    "LOGIN": "تسجيل الدخول",
+    "LOGOUT_CONFIRM_TITLE": "تسجيل الخروج؟",
+    "LOGOUT_CONFIRM_TEXT": "ستحتاج إلى تسجيل الدخول مجددًا للوصول إلى مفضلاتك.",
+    "CANCEL": "إلغاء",
+    "LOGOUT_BUTTON": "تسجيل الخروج"
+  },
+  "LANDING": {
+    "TITLE": "جَكَّا",
+    "SUBTITLE": "استمع واقرأ القرآن الكريم، سورة بسورة، مع عدة قراء والترجمة الفرنسية آية بآية.",
+    "BROWSE_BUTTON": "تصفح السور",
+    "CREATE_ACCOUNT_BUTTON": "إنشاء حساب",
+    "FEATURE_LISTEN_TITLE": "استماع",
+    "FEATURE_LISTEN_DESC": "عدة قراء للاختيار من بينهم، بث فوري، دون الحاجة إلى التسجيل.",
+    "FEATURE_READ_TITLE": "قراءة موجهة",
+    "FEATURE_READ_DESC": "النص العربي والترجمة الفرنسية، مع تظليل الآية بتزامن مع الصوت.",
+    "FEATURE_FAVORITES_TITLE": "المفضلة",
+    "FEATURE_FAVORITES_DESC": "ضع علامة على سورك المفضلة وجدها بنقرة واحدة من حسابك.",
+    "FAQ_TITLE": "الأسئلة الشائعة",
+    "FAQ_SUBTITLE": "بعض المعلومات البسيطة حول الإسلام والقرآن."
+  },
+  "LOGIN": {
+    "TITLE": "مرحبًا بعودتك",
+    "SUBTITLE": "سجّل الدخول لاسترجاع مفضلاتك",
+    "EMAIL_LABEL": "البريد الإلكتروني",
+    "EMAIL_INVALID": "البريد الإلكتروني غير صالح.",
+    "PASSWORD_LABEL": "كلمة المرور",
+    "PASSWORD_INVALID": "6 أحرف على الأقل.",
+    "SUBMIT_LOADING": "جارٍ تسجيل الدخول...",
+    "SUBMIT": "تسجيل الدخول",
+    "NO_ACCOUNT": "ليس لديك حساب بعد؟",
+    "SIGNUP_LINK": "إنشاء حساب"
+  },
+  "REGISTER": {
+    "TITLE": "إنشاء حساب",
+    "SUBTITLE": "انضم إلى جَكَّا لحفظ مفضلاتك",
+    "NAME_LABEL": "الاسم",
+    "NAME_INVALID": "الاسم مطلوب (حرفان على الأقل).",
+    "EMAIL_LABEL": "البريد الإلكتروني",
+    "EMAIL_INVALID": "البريد الإلكتروني غير صالح.",
+    "PASSWORD_LABEL": "كلمة المرور",
+    "PASSWORD_INVALID": "6 أحرف على الأقل.",
+    "PASSWORD_CONFIRM_LABEL": "تأكيد كلمة المرور",
+    "PASSWORD_MISMATCH": "كلمتا المرور غير متطابقتين.",
+    "SUBMIT_LOADING": "جارٍ الإنشاء...",
+    "SUBMIT": "إنشاء حسابي",
+    "HAS_ACCOUNT": "لديك حساب بالفعل؟",
+    "LOGIN_LINK": "تسجيل الدخول"
+  },
+  "DHIKR": {
+    "TITLE": "عداد الذكر",
+    "TARGET_REACHED": "✨ تم بلوغ الهدف، تقبله الله!",
+    "TARGET_LABEL": "الهدف:",
+    "RESET_SESSION": "إعادة تعيين هذه الجلسة",
+    "TOTAL_FOR": "المجموع الكلي لـ",
+    "RESET_TOTAL": "إعادة التعيين إلى صفر",
+    "RESET_MODAL_TITLE": "إعادة تعيين المجموع إلى صفر؟",
+    "RESET_MODAL_TEXT": "المجموع الكلي لـ",
+    "RESET_MODAL_TEXT_END": "سيُمحى نهائيًا.",
+    "NO": "لا",
+    "YES": "نعم",
+    "TAP_ARIA": "عدّ ذكرًا"
+  },
+  "ABLUTIONS": {
+    "TITLE": "دليل الوضوء",
+    "SUBTITLE": "خطوة بخطوة، مع الأدعية الأساسية",
+    "TAB_GUIDE": "دليل خطوة بخطوة",
+    "TAB_LIST": "نظرة عامة",
+    "STEP_LABEL": "الخطوة",
+    "ONCE_ONLY": "تُفعل مرة واحدة فقط",
+    "RECOMMENDED_TIMES": "× (مستحب)",
+    "RECOMMENDED_TIMES_LIST": "× مستحب",
+    "PREVIOUS": "السابق",
+    "NEXT": "التالي",
+    "RESTART": "إعادة البدء"
+  },
+  "FAVORIS": {
+    "TITLE": "مفضلاتي",
+    "EMPTY_TEXT": "ليس لديك أي سورة مفضلة بعد.",
+    "BROWSE_BUTTON": "تصفح السور",
+    "VERSES": "آيات"
+  },
+  "CALENDRIER": {
+    "TITLE": "التقويم الهجري",
+    "TODAY": "اليوم",
+    "UPCOMING_EVENTS": "الأحداث القادمة",
+    "NO_EVENTS": "لا توجد أحداث قادمة هذا العام.",
+    "FOOTER_NOTE": "يتم حساب التواريخ الهجرية خوارزميًا وقد تختلف بمقدار يوم واحد عن الرؤية الرسمية للهلال حسب الدولة.",
+    "PREV_MONTH_ARIA": "الشهر السابق",
+    "NEXT_MONTH_ARIA": "الشهر التالي"
+  },
+  "COMMON": {
+    "LANGUAGE": "اللغة"
+  }
+}

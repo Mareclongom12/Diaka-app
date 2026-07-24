@@ -1,0 +1,107 @@
+{
+  "NAVBAR": {
+    "SOURATES": "Simu",
+    "FAVORIS": "Bànneexal",
+    "DOWNLOADS": "Yebbi",
+    "MORE": "Yeneen",
+    "QUIZ": "Laaj",
+    "CALENDAR": "Almanax",
+    "ZIKR": "Sikar",
+    "PRAYERS": "Ñaan",
+    "ABLUTIONS": "Ndox",
+    "PROFILE": "Sama profil",
+    "LOGOUT": "Génn",
+    "LOGIN": "Dugg",
+    "LOGOUT_CONFIRM_TITLE": "Génn?",
+    "LOGOUT_CONFIRM_TEXT": "Dinga soxla dugg bu bees ngir gis sa bànneexal yi.",
+    "CANCEL": "Bàyyi",
+    "LOGOUT_BUTTON": "Génn"
+  },
+  "LANDING": {
+    "TITLE": "Jàkka",
+    "SUBTITLE": "Dégluwaale te jàng Al Qur'aan bu Sell bi, simu bu nekk, ak ay saytaan bu bare ak firi wolof-farañse ci ayah bu nekk.",
+    "BROWSE_BUTTON": "Seet simu yi",
+    "CREATE_ACCOUNT_BUTTON": "Sos sa kont",
+    "FEATURE_LISTEN_TITLE": "Dégluwaale",
+    "FEATURE_LISTEN_DESC": "Ay saytaan bu bare nga mën a tànn, dégluwaale ci saa si, amul soxla xam ci kont.",
+    "FEATURE_READ_TITLE": "Njàngat gu jub",
+    "FEATURE_READ_DESC": "Kàddu araab ak firi farañse, ayah bi di feeñ ci waxtu di dox ak baat bi.",
+    "FEATURE_FAVORITES_TITLE": "Bànneexal",
+    "FEATURE_FAVORITES_DESC": "Mar simu yi nga bëgg lool te fekk leen ci benn coup ci sa kont.",
+    "FAQ_TITLE": "Laaj yu nekk ci njariñ",
+    "FAQ_SUBTITLE": "Yenn xibaar yu woyof ci lislaam ak Alxuraan."
+  },
+  "LOGIN": {
+    "TITLE": "Dalal ak diam",
+    "SUBTITLE": "Dugg ngir fekk sa bànneexal yi",
+    "EMAIL_LABEL": "Imeel",
+    "EMAIL_INVALID": "Imeel bi baaxul.",
+    "PASSWORD_LABEL": "Baatu tééréwaay",
+    "PASSWORD_INVALID": "6 araf yu néew.",
+    "SUBMIT_LOADING": "Duggu...",
+    "SUBMIT": "Dugg",
+    "NO_ACCOUNT": "Amoo kont?",
+    "SIGNUP_LINK": "Sos kont"
+  },
+  "REGISTER": {
+    "TITLE": "Sos sa kont",
+    "SUBTITLE": "Bokk ci Jàkka ngir denc sa bànneexal yi",
+    "NAME_LABEL": "Tur",
+    "NAME_INVALID": "Tur war naa am (2 araf yu néew).",
+    "EMAIL_LABEL": "Imeel",
+    "EMAIL_INVALID": "Imeel bi baaxul.",
+    "PASSWORD_LABEL": "Baatu tééréwaay",
+    "PASSWORD_INVALID": "6 araf yu néew.",
+    "PASSWORD_CONFIRM_LABEL": "Wone baatu tééréwaay bi",
+    "PASSWORD_MISMATCH": "Baatu tééréwaay yi bokkuñu.",
+    "SUBMIT_LOADING": "Di sosaate...",
+    "SUBMIT": "Sos sama kont",
+    "HAS_ACCOUNT": "Am nga kont ba léegi?",
+    "LOGIN_LINK": "Dugg"
+  },
+  "DHIKR": {
+    "TITLE": "Xayma Sikar",
+    "TARGET_REACHED": "✨ Yoonu bi mat na, na ko Yàlla nangu!",
+    "TARGET_LABEL": "Yoon:",
+    "RESET_SESSION": "Delloosi séance bi",
+    "TOTAL_FOR": "Limu bépp ngir",
+    "RESET_TOTAL": "Delloosi ci tus",
+    "RESET_MODAL_TITLE": "Delloosi limu bi ci tus?",
+    "RESET_MODAL_TEXT": "Limu bépp ngir",
+    "RESET_MODAL_TEXT_END": "dinaa far ba fàww.",
+    "NO": "Déet",
+    "YES": "Waaw",
+    "TAP_ARIA": "Waññi benn sikar"
+  },
+  "ABLUTIONS": {
+    "TITLE": "Njàngale Ndox (Wudu)",
+    "SUBTITLE": "Tàllif bu nekk, ak ay ñaan yu am solo",
+    "TAB_GUIDE": "Njàngale tàllif bu nekk",
+    "TAB_LIST": "Melokaanu bépp",
+    "STEP_LABEL": "Tàllif",
+    "ONCE_ONLY": "Def ko benn yoon rekk",
+    "RECOMMENDED_TIMES": "× (bu baax)",
+    "RECOMMENDED_TIMES_LIST": "× bu baax",
+    "PREVIOUS": "Bi jiitu",
+    "NEXT": "Bi topp",
+    "RESTART": "Dellu tambali"
+  },
+  "FAVORIS": {
+    "TITLE": "Sama Bànneexal",
+    "EMPTY_TEXT": "Amoo simu bu bànneexal ba léegi.",
+    "BROWSE_BUTTON": "Seet simu yi",
+    "VERSES": "ayah"
+  },
+  "CALENDRIER": {
+    "TITLE": "Almanax Hijri",
+    "TODAY": "Tey",
+    "UPCOMING_EVENTS": "Xew-xew yu ñëw",
+    "NO_EVENTS": "Amul xew-xew ci at mii di ñëw.",
+    "FOOTER_NOTE": "Bis yu hijri dañu leen xayma ak nappax, mën nañu wéy ±1 fan wrt li ñu gis weer wi ci saa yu bare.",
+    "PREV_MONTH_ARIA": "Weer wi jiitu",
+    "NEXT_MONTH_ARIA": "Weer wi topp"
+  },
+  "COMMON": {
+    "LANGUAGE": "Làkk"
+  }
+}

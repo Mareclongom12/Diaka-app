@@ -6,8 +6,32 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon-512.png">
 </head>
 <body>
-  <app-root></app-root>
+<app-root></app-root>
+<script>
+  // Bloque le zoom Ctrl+molette / Ctrl+trackpad
+  window.addEventListener('wheel', function (e) {
+    if (e.ctrlKey) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  // Bloque le zoom clavier (Ctrl + '+' / '-' / '0')
+  window.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && ['+', '-', '=', '0'].includes(e.key)) {
+      e.preventDefault();
+    }
+  });
+
+  // Bloque le pinch-zoom sur Safari (desktop trackpad et mobile)
+  window.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+  });
+  window.addEventListener('gesturechange', function (e) {
+    e.preventDefault();
+  });
+</script>
 </body>
 </html>

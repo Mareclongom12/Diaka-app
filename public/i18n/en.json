@@ -1,0 +1,107 @@
+{
+  "NAVBAR": {
+    "SOURATES": "Surahs",
+    "FAVORIS": "Favorites",
+    "DOWNLOADS": "Downloads",
+    "MORE": "More",
+    "QUIZ": "Quiz",
+    "CALENDAR": "Calendar",
+    "ZIKR": "Dhikr",
+    "PRAYERS": "Prayers",
+    "ABLUTIONS": "Ablutions",
+    "PROFILE": "My Profile",
+    "LOGOUT": "Log out",
+    "LOGIN": "Log in",
+    "LOGOUT_CONFIRM_TITLE": "Log out?",
+    "LOGOUT_CONFIRM_TEXT": "You'll need to log in again to access your favorites.",
+    "CANCEL": "Cancel",
+    "LOGOUT_BUTTON": "Log out"
+  },
+  "LANDING": {
+    "TITLE": "Jàkka",
+    "SUBTITLE": "Listen to and read the Holy Quran, surah by surah, with several reciters and French translation verse by verse.",
+    "BROWSE_BUTTON": "Browse surahs",
+    "CREATE_ACCOUNT_BUTTON": "Create an account",
+    "FEATURE_LISTEN_TITLE": "Listen",
+    "FEATURE_LISTEN_DESC": "Several reciters to choose from, instant streaming, no sign-up required.",
+    "FEATURE_READ_TITLE": "Guided reading",
+    "FEATURE_READ_DESC": "Arabic text and French translation, verse highlighted in rhythm with the voice.",
+    "FEATURE_FAVORITES_TITLE": "Favorites",
+    "FEATURE_FAVORITES_DESC": "Mark your favorite surahs and find them again in one click from your account.",
+    "FAQ_TITLE": "Frequently asked questions",
+    "FAQ_SUBTITLE": "A few simple pointers about Islam and the Quran."
+  },
+  "LOGIN": {
+    "TITLE": "Welcome back",
+    "SUBTITLE": "Log in to find your favorites again",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_INVALID": "Invalid email.",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_INVALID": "6 characters minimum.",
+    "SUBMIT_LOADING": "Logging in...",
+    "SUBMIT": "Log in",
+    "NO_ACCOUNT": "Don't have an account yet?",
+    "SIGNUP_LINK": "Sign up"
+  },
+  "REGISTER": {
+    "TITLE": "Create an account",
+    "SUBTITLE": "Join Jàkka to save your favorites",
+    "NAME_LABEL": "Name",
+    "NAME_INVALID": "Name required (2 characters minimum).",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_INVALID": "Invalid email.",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_INVALID": "6 characters minimum.",
+    "PASSWORD_CONFIRM_LABEL": "Confirm password",
+    "PASSWORD_MISMATCH": "Passwords do not match.",
+    "SUBMIT_LOADING": "Creating account...",
+    "SUBMIT": "Create my account",
+    "HAS_ACCOUNT": "Already have an account?",
+    "LOGIN_LINK": "Log in"
+  },
+  "DHIKR": {
+    "TITLE": "Dhikr Counter",
+    "TARGET_REACHED": "✨ Goal reached, may Allah accept it!",
+    "TARGET_LABEL": "Goal:",
+    "RESET_SESSION": "Reset this session",
+    "TOTAL_FOR": "Total for",
+    "RESET_TOTAL": "Reset to zero",
+    "RESET_MODAL_TITLE": "Reset the total to zero?",
+    "RESET_MODAL_TEXT": "The total for",
+    "RESET_MODAL_TEXT_END": "will be permanently erased.",
+    "NO": "No",
+    "YES": "Yes",
+    "TAP_ARIA": "Count a dhikr"
+  },
+  "ABLUTIONS": {
+    "TITLE": "Ablutions Guide (Wudu)",
+    "SUBTITLE": "Step by step, with essential invocations",
+    "TAB_GUIDE": "Step-by-step guide",
+    "TAB_LIST": "Overview",
+    "STEP_LABEL": "Step",
+    "ONCE_ONLY": "To be done only once",
+    "RECOMMENDED_TIMES": "× (recommended)",
+    "RECOMMENDED_TIMES_LIST": "× recommended",
+    "PREVIOUS": "Previous",
+    "NEXT": "Next",
+    "RESTART": "Restart"
+  },
+  "FAVORIS": {
+    "TITLE": "My Favorites",
+    "EMPTY_TEXT": "You don't have any favorite surah yet.",
+    "BROWSE_BUTTON": "Browse surahs",
+    "VERSES": "verses"
+  },
+  "CALENDRIER": {
+    "TITLE": "Hijri Calendar",
+    "TODAY": "Today",
+    "UPCOMING_EVENTS": "Upcoming events",
+    "NO_EVENTS": "No upcoming events this year.",
+    "FOOTER_NOTE": "Hijri dates are calculated algorithmically and may vary by ±1 day from the official moon sighting depending on the country.",
+    "PREV_MONTH_ARIA": "Previous month",
+    "NEXT_MONTH_ARIA": "Next month"
+  },
+  "COMMON": {
+    "LANGUAGE": "Language"
+  }
+}

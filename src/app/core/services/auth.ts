@@ -47,6 +47,10 @@ export class AuthService {
     this.currentUser.set(null);
   }
 
+  invalidateSession(): void {
+    this.clearSession();
+  }
+
   getToken(): string | null {
     return localStorage.getItem('token');
   }

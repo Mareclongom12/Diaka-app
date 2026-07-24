@@ -1,15 +1,18 @@
 import { Component, inject, signal, HostListener } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { AuthService } from '../../core/services/auth';
+import { LanguageService, AppLanguage } from '../../core/services/language';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, TranslatePipe],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
 export class Navbar {
   authService = inject(AuthService);
+  languageService = inject(LanguageService);
   private router = inject(Router);
 
   showConfirmModal = signal(false);
@@ -21,6 +24,11 @@ export class Navbar {
 
   closeMoreMenu(): void {
     this.showMoreMenu.set(false);
+  }
+
+  onLanguageChange(event: Event): void {
+    const value = (event.target as HTMLSelectElement).value as AppLanguage;
+    this.languageService.setLanguage(value);
   }
 
   @HostListener('document:click', ['$event'])
