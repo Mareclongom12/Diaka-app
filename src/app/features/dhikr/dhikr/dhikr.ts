@@ -14,6 +14,10 @@ export class Dhikr {
   showResetConfirm = signal(false);
 
   tap(): void {
+    if (this.dhikrService.isTargetReached()) {
+      this.resetSession();
+      return;
+    }
     this.dhikrService.increment();
   }
 
