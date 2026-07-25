@@ -15,18 +15,18 @@
   </svg>
 
   <div class="relative max-w-3xl mx-auto p-4 sm:p-6">
-    <h1 class="text-xl sm:text-2xl font-bold mb-1 text-gray-900">Téléchargements</h1>
-    <p class="text-sm text-gray-500 mb-6">Sourates disponibles pour une écoute hors-ligne.</p>
+    <h1 class="text-xl sm:text-2xl font-bold mb-1 text-gray-900">{{ 'TELECHARGEMENTS.TITLE' | translate }}</h1>
+    <p class="text-sm text-gray-500 mb-6">{{ 'TELECHARGEMENTS.SUBTITLE' | translate }}</p>
 
     @if (offlineAudio.registry().length === 0) {
       <div class="text-center py-16 sm:py-20 px-6 bg-white rounded-2xl border border-emerald-50 shadow-sm">
         <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-md shadow-emerald-100">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
         </div>
-        <p class="text-gray-500 mb-6">Aucun téléchargement pour l'instant.</p>
+        <p class="text-gray-500 mb-6">{{ 'TELECHARGEMENTS.EMPTY_TEXT' | translate }}</p>
         <a routerLink="/sourates" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg shadow-emerald-200 hover:bg-emerald-700 hover:shadow-emerald-300 transition-all">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" /></svg>
-          Parcourir les sourates
+          {{ 'TELECHARGEMENTS.BROWSE_BUTTON' | translate }}
         </a>
       </div>
     } @else {
@@ -47,7 +47,7 @@
           <span class="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
           </span>
-              <button (click)="remove(item.sourateId, item.reciterIdentifier)" class="flex items-center justify-center w-9 h-9 rounded-full text-gray-400 hover:bg-red-50 hover:text-red-600 transition-colors" aria-label="Supprimer le téléchargement">
+              <button (click)="remove(item.sourateId, item.reciterIdentifier)" class="flex items-center justify-center w-9 h-9 rounded-full text-gray-400 hover:bg-red-50 hover:text-red-600 transition-colors" [attr.aria-label]="'TELECHARGEMENTS.REMOVE_ARIA' | translate">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg>
               </button>
             </div>

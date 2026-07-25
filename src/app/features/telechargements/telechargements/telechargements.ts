@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { OfflineAudioService } from '../../../core/services/offline-audio';
 
 @Component({
   selector: 'app-telechargements',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe],
   templateUrl: './telechargements.html',
   styleUrl: './telechargements.scss',
 })

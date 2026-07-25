@@ -1,13 +1,14 @@
 import { Component, inject, signal, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 import { SourateService } from '../../../core/services/sourate';
 import { OfflineAudioService } from '../../../core/services/offline-audio';
 import { Sourate } from '../../../core/models/sourate.model';
 
 @Component({
   selector: 'app-sourate-list',
-  imports: [RouterLink, FormsModule],
+  imports: [RouterLink, FormsModule, TranslatePipe],
   templateUrl: './sourate-list.html',
   styleUrl: './sourate-list.scss',
 })
@@ -17,7 +18,7 @@ export class SourateList {
 
   sourates = signal<Sourate[]>([]);
   loading = signal(true);
-  error = signal<string | null>(null);
+  hasError = signal(false);
   searchTerm = signal('');
 
   downloadedSourateIds = computed<Set<number>>(() =>
@@ -42,7 +43,7 @@ export class SourateList {
         this.loading.set(false);
       },
       error: () => {
-        this.error.set('Impossible de charger les sourates. Vérifie que le serveur est bien lancé.');
+        this.hasError.set(true);
         this.loading.set(false);
       },
     });

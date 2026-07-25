@@ -14,6 +14,7 @@ import { Calendrier } from './features/calendrier/calendrier/calendrier';
 import { Dhikr } from './features/dhikr/dhikr/dhikr';
 import { HorairesPrieres } from './features/horaires-prieres/horaires-prieres/horaires-prieres';
 import { Ablutions } from './features/ablutions/ablutions/ablutions';
+import { Dashboard } from './features/dashboard/dashboard/dashboard';
 
 export const routes: Routes = [
   { path: '', component: Landing, data: { hideNavbar: true } },
@@ -29,5 +30,6 @@ export const routes: Routes = [
   { path: 'dhikr', component: Dhikr, canActivate: [authGuard] },
   { path: 'horaires-prieres', component: HorairesPrieres, canActivate: [authGuard] },
   { path: 'ablutions', component: Ablutions, canActivate: [authGuard] },
+  { path: 'dashboard', component: Dashboard, canActivate: [authGuard] },
   { path: '**', component: NotFound, data: { hideNavbar: true } },
 ];

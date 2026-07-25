@@ -1,24 +1,28 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 import { PrayerTimesService } from '../../../core/services/prayer-times';
 import { PrayerNotificationsService } from '../../../core/services/prayer-notifications';
+import { LanguageService } from '../../../core/services/language';
 
 const METHODS = [
-  { id: 2, label: 'Ligue Islamique Mondiale' },
-  { id: 3, label: 'Umm al-Qura (Mecque)' },
-  { id: 5, label: 'Égypte' },
-  { id: 4, label: 'Umm al-Qura (variante)' },
-  { id: 1, label: 'Karachi' },
+  { id: 2, labelKey: 'HORAIRES.METHOD_MWL' },
+  { id: 3, labelKey: 'HORAIRES.METHOD_UMM_AL_QURA' },
+  { id: 5, labelKey: 'HORAIRES.METHOD_EGYPT' },
+  { id: 4, labelKey: 'HORAIRES.METHOD_UMM_AL_QURA_VAR' },
+  { id: 1, labelKey: 'HORAIRES.METHOD_KARACHI' },
 ];
 
 @Component({
   selector: 'app-horaires-prieres',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './horaires-prieres.html',
   styleUrl: './horaires-prieres.scss',
 })
 export class HorairesPrieres implements OnInit {
   prayerTimesService = inject(PrayerTimesService);
   notifService = inject(PrayerNotificationsService);
+  private translate = inject(TranslateService);
+  private languageService = inject(LanguageService);
 
   methods = METHODS;
 
@@ -44,9 +48,12 @@ export class HorairesPrieres implements OnInit {
   }
 
   formatMinutesLeft(minutes: number): string {
+    this.languageService.currentLang();
+    const unitMin = this.translate.instant('HORAIRES.UNIT_MIN');
+    const unitHour = this.translate.instant('HORAIRES.UNIT_HOUR');
     const h = Math.floor(minutes / 60);
     const m = minutes % 60;
-    if (h === 0) return `${m} min`;
-    return `${h} h ${m} min`;
+    if (h === 0) return `${m} ${unitMin}`;
+    return `${h} ${unitHour} ${m} ${unitMin}`;
   }
 }

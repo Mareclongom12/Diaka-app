@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from '../../../core/services/auth';
 
 function passwordsMatchValidator(control: AbstractControl): ValidationErrors | null {
@@ -20,6 +21,7 @@ export class Register {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
+  private translate = inject(TranslateService);
 
   loading = signal(false);
   errorMessage = signal<string | null>(null);
@@ -48,7 +50,7 @@ export class Register {
     this.authService.register(name, email, password, password_confirmation).subscribe({
       next: () => {
         this.loading.set(false);
-        this.router.navigate(['/sourates']);
+        this.router.navigate(['/dashboard']);
       },
       error: (err: HttpErrorResponse) => {
         this.loading.set(false);
@@ -59,19 +61,19 @@ export class Register {
 
   private extractErrorMessage(err: HttpErrorResponse): string {
     if (err.status === 0) {
-      return 'Impossible de contacter le serveur. Vérifie ta connexion.';
+      return this.translate.instant('REGISTER.ERROR_NETWORK');
     }
     if (err.status === 422) {
       const errors = err.error?.errors;
       if (errors?.email) {
-        return 'Cet email est déjà utilisé.';
+        return this.translate.instant('REGISTER.ERROR_EMAIL_TAKEN');
       }
       const firstError = errors ? Object.values(errors)[0] : null;
       if (Array.isArray(firstError) && firstError.length > 0) {
         return firstError[0] as string;
       }
-      return 'Certaines informations sont invalides.';
+      return this.translate.instant('REGISTER.ERROR_INVALID');
     }
-    return 'Une erreur est survenue. Réessaie plus tard.';
+    return this.translate.instant('REGISTER.ERROR_GENERIC');
   }
 }

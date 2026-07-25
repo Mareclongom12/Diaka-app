@@ -41,7 +41,10 @@
     "SUBMIT_LOADING": "Connexion...",
     "SUBMIT": "Se connecter",
     "NO_ACCOUNT": "Pas encore de compte ?",
-    "SIGNUP_LINK": "S'inscrire"
+    "SIGNUP_LINK": "S'inscrire",
+    "ERROR_NETWORK": "Impossible de contacter le serveur. Vérifie ta connexion.",
+    "ERROR_INVALID_CREDENTIALS": "Email ou mot de passe incorrect.",
+    "ERROR_GENERIC": "Une erreur est survenue. Réessaie plus tard."
   },
   "REGISTER": {
     "TITLE": "Créer un compte",
@@ -57,7 +60,11 @@
     "SUBMIT_LOADING": "Création...",
     "SUBMIT": "Créer mon compte",
     "HAS_ACCOUNT": "Déjà un compte ?",
-    "LOGIN_LINK": "Se connecter"
+    "LOGIN_LINK": "Se connecter",
+    "ERROR_NETWORK": "Impossible de contacter le serveur. Vérifie ta connexion.",
+    "ERROR_EMAIL_TAKEN": "Cet email est déjà utilisé.",
+    "ERROR_INVALID": "Certaines informations sont invalides.",
+    "ERROR_GENERIC": "Une erreur est survenue. Réessaie plus tard."
   },
   "DHIKR": {
     "TITLE": "Compteur de Zikr",
@@ -101,7 +108,855 @@
     "PREV_MONTH_ARIA": "Mois précédent",
     "NEXT_MONTH_ARIA": "Mois suivant"
   },
+  "SOURATES": {
+    "TITLE": "Les Sourates",
+    "SEARCH_PLACEHOLDER": "Rechercher une sourate (nom ou numéro)...",
+    "NO_RESULTS": "Aucune sourate ne correspond à",
+    "VERSES": "versets",
+    "DOWNLOADED_ARIA": "Téléchargée",
+    "LOAD_ERROR": "Impossible de charger les sourates. Vérifie que le serveur est bien lancé."
+  },
+  "SOURATE_DETAIL": {
+    "BACK": "Retour aux sourates",
+    "RECITER_LABEL": "Récitateur",
+    "PAUSE": "Pause",
+    "LISTEN_READ": "Écouter et lire",
+    "VIEW_DOWNLOADS": "Voir les téléchargements",
+    "DOWNLOAD": "Télécharger",
+    "VERSE_OF": "Verset {{current}} / {{total}}",
+    "NOT_FOUND": "Sourate introuvable.",
+    "REMOVE_FAVORITE_ARIA": "Retirer des favoris",
+    "ADD_FAVORITE_ARIA": "Ajouter aux favoris",
+    "BACK_TO_TOP_ARIA": "Retour en haut"
+  },
+  "TELECHARGEMENTS": {
+    "TITLE": "Téléchargements",
+    "SUBTITLE": "Sourates disponibles pour une écoute hors-ligne.",
+    "EMPTY_TEXT": "Aucun téléchargement pour l'instant.",
+    "BROWSE_BUTTON": "Parcourir les sourates",
+    "REMOVE_ARIA": "Supprimer le téléchargement"
+  },
+  "QUIZ": {
+    "QUESTION_OF": "Question {{current}} / {{total}}",
+    "SCORE": "Score :",
+    "NEXT_QUESTION": "Question suivante",
+    "SEE_RESULT": "Voir le résultat",
+    "RESTART": "Recommencer",
+    "BACK_TO_SOURATES": "Retour aux sourates",
+    "CONGRATS": "🎉 Félicitations, excellent score !",
+    "RESULT_PERFECT": "Excellent ! Score parfait.",
+    "RESULT_GREAT": "Très bien joué !",
+    "RESULT_OK": "Pas mal, continue à apprendre !",
+    "RESULT_LOW": "Continue d'explorer les sourates pour progresser."
+  },
+  "HORAIRES": {
+    "TITLE": "Horaires de Prière",
+    "LOADING": "Localisation et récupération des horaires...",
+    "RETRY": "Réessayer",
+    "NEXT_PRAYER": "Prochaine prière",
+    "IN": "dans",
+    "IN_PROGRESS": "(en cours)",
+    "CALCULATION_METHOD": "Méthode de calcul",
+    "NOTIFICATIONS": "Notifications",
+    "NOTIFICATIONS_DESC": "Recevoir un rappel à l'heure de chaque prière (onglet ouvert)",
+    "NOTIFICATIONS_BLOCKED": "Les notifications sont bloquées dans les réglages de ton navigateur pour ce site.",
+    "METHOD_MWL": "Ligue Islamique Mondiale",
+    "METHOD_UMM_AL_QURA": "Umm al-Qura (Mecque)",
+    "METHOD_EGYPT": "Égypte",
+    "METHOD_UMM_AL_QURA_VAR": "Umm al-Qura (variante)",
+    "METHOD_KARACHI": "Karachi",
+    "UNIT_MIN": "min",
+    "UNIT_HOUR": "h"
+  },
+  "PROFILE": {
+    "TITLE": "Mon profil",
+    "FAVORITES": "Favoris",
+    "DOWNLOADS": "Téléchargements",
+    "TEST_KNOWLEDGE": "Tester mes connaissances",
+    "BROWSE_SURAHS": "Parcourir les sourates",
+    "LANGUAGE_SECTION": "Langue de l'application"
+  },
+  "DASHBOARD": {
+    "GREETING": "Assalamu alaykum",
+    "NEXT_PRAYER_CARD": "Prochaine prière",
+    "VERSE_OF_DAY": "Verset du jour",
+    "MOTIVATION_OF_DAY": "Pensée du jour",
+    "VIEW_ALL_PRAYERS": "Voir tous les horaires",
+    "READ_SOURATE": "Lire la sourate complète",
+    "LOADING_VERSE": "Chargement du verset...",
+    "IN": "dans"
+  },
+  "DASHBOARD_MOTIVATIONS": {
+    "1": "« Certes, avec la difficulté, il y a une facilité. » (Sourate Ash-Sharh, 94:6)",
+    "2": "« Et quiconque place sa confiance en Allah, Il lui suffit. » (Sourate At-Talaq, 65:3)",
+    "3": "« Allah n'impose à aucune âme une charge supérieure à sa capacité. » (Sourate Al-Baqara, 2:286)",
+    "4": "« La patience est une lumière. » — Hadith rapporté par Muslim",
+    "5": "« Le meilleur d'entre vous est celui qui apprend le Coran et l'enseigne. » — Hadith rapporté par Al-Bukhari",
+    "6": "« Ne désespérez pas de la miséricorde d'Allah. » (Sourate Az-Zumar, 39:53)",
+    "7": "« Rappelle, car le rappel profite aux croyants. » (Sourate Adh-Dhariyat, 51:55)",
+    "8": "« Quiconque emprunte un chemin cherchant du savoir, Allah lui facilite un chemin vers le Paradis. » — Hadith rapporté par Muslim",
+    "9": "« Et adore ton Seigneur jusqu'à ce que te vienne la certitude. » (Sourate Al-Hijr, 15:99)",
+    "10": "« Les actions ne valent que par leurs intentions. » — Hadith rapporté par Al-Bukhari"
+  },
   "COMMON": {
     "LANGUAGE": "Langue"
+  },
+  "QUIZ_QUESTIONS": {
+    "1": {
+      "q": "Combien y a-t-il de piliers de l'islam ?",
+      "o": [
+        "Trois",
+        "Cinq",
+        "Sept",
+        "Dix"
+      ]
+    },
+    "2": {
+      "q": "Quel est le premier pilier de l'islam ?",
+      "o": [
+        "La prière",
+        "Le jeûne",
+        "La chahada",
+        "Le hajj"
+      ]
+    },
+    "3": {
+      "q": "Que signifie le mot \"islam\" ?",
+      "o": [
+        "Paix",
+        "Soumission",
+        "Foi",
+        "Unité"
+      ]
+    },
+    "4": {
+      "q": "Comment appelle-t-on un adepte de l'islam ?",
+      "o": [
+        "Un musulman",
+        "Un croyant",
+        "Un fidèle",
+        "Un disciple"
+      ]
+    },
+    "5": {
+      "q": "Quel est le nom du dernier prophète en islam ?",
+      "o": [
+        "Moïse",
+        "Jésus",
+        "Muhammad",
+        "Abraham"
+      ]
+    },
+    "6": {
+      "q": "Dans quelle ville le prophète Muhammad (ﷺ) est-il né ?",
+      "o": [
+        "Médine",
+        "La Mecque",
+        "Jérusalem",
+        "Damas"
+      ]
+    },
+    "7": {
+      "q": "Comment appelle-t-on le lieu de culte des musulmans ?",
+      "o": [
+        "Une église",
+        "Une synagogue",
+        "Une mosquée",
+        "Un temple"
+      ]
+    },
+    "8": {
+      "q": "Quel est le nom de la profession de foi musulmane ?",
+      "o": [
+        "La salat",
+        "La chahada",
+        "Le zakat",
+        "Le sawm"
+      ]
+    },
+    "9": {
+      "q": "Quel est le cinquième pilier de l'islam ?",
+      "o": [
+        "La zakat",
+        "La prière",
+        "Le pèlerinage",
+        "Le jeûne"
+      ]
+    },
+    "10": {
+      "q": "Comment appelle-t-on l'aumône obligatoire en islam ?",
+      "o": [
+        "Le sawm",
+        "Le zakat",
+        "Le hajj",
+        "La salat"
+      ]
+    },
+    "11": {
+      "q": "Vers quelle direction les musulmans se tournent-ils pour prier ?",
+      "o": [
+        "Médine",
+        "Jérusalem",
+        "La Mecque",
+        "Damas"
+      ]
+    },
+    "12": {
+      "q": "Comment appelle-t-on la direction de la prière ?",
+      "o": [
+        "Le mihrab",
+        "La qibla",
+        "Le minaret",
+        "Le minbar"
+      ]
+    },
+    "13": {
+      "q": "Quel ange a révélé le Coran au prophète Muhammad (ﷺ) ?",
+      "o": [
+        "Michael",
+        "Gabriel",
+        "Israfil",
+        "Azrael"
+      ]
+    },
+    "14": {
+      "q": "Dans quelle grotte le prophète Muhammad (ﷺ) a-t-il reçu la première révélation ?",
+      "o": [
+        "Hira",
+        "Thawr",
+        "Uhud",
+        "Badr"
+      ]
+    },
+    "15": {
+      "q": "Quel est le nom du voyage nocturne du prophète Muhammad (ﷺ) ?",
+      "o": [
+        "Le hajj",
+        "Al-Isra wal-Miraj",
+        "La hijra",
+        "Le ramadan"
+      ]
+    },
+    "16": {
+      "q": "Comment appelle-t-on l'émigration du prophète de La Mecque à Médine ?",
+      "o": [
+        "La hijra",
+        "Le hajj",
+        "La zakat",
+        "Le sawm"
+      ]
+    },
+    "17": {
+      "q": "Quel calendrier utilise l'islam ?",
+      "o": [
+        "Solaire",
+        "Lunaire",
+        "Grégorien",
+        "Julien"
+      ]
+    },
+    "18": {
+      "q": "Quel est le nom du livre sacré de l'islam ?",
+      "o": [
+        "La Torah",
+        "Le Coran",
+        "La Bible",
+        "Les Vedas"
+      ]
+    },
+    "19": {
+      "q": "Combien y a-t-il de piliers de la foi (iman) en islam ?",
+      "o": [
+        "Quatre",
+        "Cinq",
+        "Six",
+        "Sept"
+      ]
+    },
+    "20": {
+      "q": "Qui est considéré comme le premier prophète en islam ?",
+      "o": [
+        "Noé",
+        "Adam",
+        "Abraham",
+        "Moïse"
+      ]
+    },
+    "21": {
+      "q": "Quel prophète est associé à la construction de la Kaaba ?",
+      "o": [
+        "Moïse",
+        "Abraham",
+        "Jésus",
+        "Noé"
+      ]
+    },
+    "22": {
+      "q": "Comment appelle-t-on les paroles et actes du prophète Muhammad (ﷺ) ?",
+      "o": [
+        "Le fiqh",
+        "La sunna",
+        "La charia",
+        "Le tafsir"
+      ]
+    },
+    "23": {
+      "q": "Comment appelle-t-on la loi islamique ?",
+      "o": [
+        "La charia",
+        "La sunna",
+        "Le hadith",
+        "Le tawhid"
+      ]
+    },
+    "24": {
+      "q": "Que signifie le mot \"tawhid\" ?",
+      "o": [
+        "La prière",
+        "L'unicité de Dieu",
+        "Le jeûne",
+        "La charité"
+      ]
+    },
+    "25": {
+      "q": "Quel est le nom donné aux récits rapportant les paroles du prophète Muhammad (ﷺ) ?",
+      "o": [
+        "Les sourates",
+        "Les hadiths",
+        "Les versets",
+        "Les piliers"
+      ]
+    },
+    "26": {
+      "q": "Combien de prières quotidiennes obligatoires ?",
+      "o": [
+        "Trois",
+        "Quatre",
+        "Cinq",
+        "Six"
+      ]
+    },
+    "27": {
+      "q": "Comment appelle-t-on les ablutions rituelles ?",
+      "o": [
+        "Le wudu",
+        "Le sawm",
+        "Le zakat",
+        "Le hajj"
+      ]
+    },
+    "28": {
+      "q": "Quelle est la première prière de la journée ?",
+      "o": [
+        "Dhuhr",
+        "Fajr",
+        "Asr",
+        "Maghrib"
+      ]
+    },
+    "29": {
+      "q": "Quelle est la dernière prière de la journée ?",
+      "o": [
+        "Maghrib",
+        "Isha",
+        "Asr",
+        "Dhuhr"
+      ]
+    },
+    "30": {
+      "q": "À quel moment la prière du Maghrib est-elle accomplie ?",
+      "o": [
+        "À l'aube",
+        "À midi",
+        "Au coucher du soleil",
+        "La nuit"
+      ]
+    },
+    "31": {
+      "q": "Pendant quel mois les musulmans jeûnent-ils ?",
+      "o": [
+        "Chaabane",
+        "Ramadan",
+        "Muharram",
+        "Rajab"
+      ]
+    },
+    "32": {
+      "q": "Comment appelle-t-on le repas pris avant l'aube pendant le Ramadan ?",
+      "o": [
+        "Le iftar",
+        "Le suhur",
+        "Le tarawih",
+        "Le zakat"
+      ]
+    },
+    "33": {
+      "q": "Comment appelle-t-on le repas de rupture du jeûne ?",
+      "o": [
+        "Le suhur",
+        "Le iftar",
+        "Le tarawih",
+        "Le witr"
+      ]
+    },
+    "34": {
+      "q": "Comment appelle-t-on les prières nocturnes spécifiques au Ramadan ?",
+      "o": [
+        "Tarawih",
+        "Witr",
+        "Duha",
+        "Tahajjud"
+      ]
+    },
+    "35": {
+      "q": "Quelle fête marque la fin du Ramadan ?",
+      "o": [
+        "Aïd al-Adha",
+        "Aïd al-Fitr",
+        "Achoura",
+        "Mawlid"
+      ]
+    },
+    "36": {
+      "q": "Quelle fête commémore le sacrifice d'Abraham ?",
+      "o": [
+        "Aïd al-Fitr",
+        "Aïd al-Adha",
+        "Achoura",
+        "Mawlid"
+      ]
+    },
+    "37": {
+      "q": "Comment appelle-t-on le pèlerinage à La Mecque ?",
+      "o": [
+        "Le sawm",
+        "La zakat",
+        "Le hajj",
+        "La salat"
+      ]
+    },
+    "38": {
+      "q": "Combien de fois un musulman doit-il accomplir le hajj au minimum ?",
+      "o": [
+        "Jamais",
+        "Une fois dans sa vie si possible",
+        "Chaque année",
+        "Cinq fois"
+      ]
+    },
+    "39": {
+      "q": "Comment appelle-t-on le petit pèlerinage, réalisable en tout temps ?",
+      "o": [
+        "Le hajj",
+        "La omra",
+        "Le tawaf",
+        "Le sa'i"
+      ]
+    },
+    "40": {
+      "q": "Comment appelle-t-on le fait de tourner autour de la Kaaba ?",
+      "o": [
+        "Le sa'i",
+        "Le tawaf",
+        "Le wuquf",
+        "Le ramy"
+      ]
+    },
+    "41": {
+      "q": "Qui est dispensé du jeûne du Ramadan pour raison de santé ?",
+      "o": [
+        "Personne",
+        "Les malades",
+        "Uniquement les enfants",
+        "Uniquement les femmes"
+      ]
+    },
+    "42": {
+      "q": "Comment appelle-t-on l'appel à la prière ?",
+      "o": [
+        "Le khutba",
+        "L'adhan",
+        "Le tafsir",
+        "Le dhikr"
+      ]
+    },
+    "43": {
+      "q": "Qui prononce traditionnellement l'appel à la prière ?",
+      "o": [
+        "L'imam",
+        "Le muezzin",
+        "Le calife",
+        "Le savant"
+      ]
+    },
+    "44": {
+      "q": "Comment appelle-t-on celui qui dirige la prière collective ?",
+      "o": [
+        "Le muezzin",
+        "L'imam",
+        "Le calife",
+        "Le hafiz"
+      ]
+    },
+    "45": {
+      "q": "Quel jour de la semaine la prière collective du vendredi a-t-elle lieu ?",
+      "o": [
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+        "Dimanche"
+      ]
+    },
+    "46": {
+      "q": "Comment appelle-t-on le sermon prononcé avant la prière du vendredi ?",
+      "o": [
+        "Le dhikr",
+        "La khutba",
+        "Le tafsir",
+        "Le adhan"
+      ]
+    },
+    "47": {
+      "q": "Comment appelle-t-on quelqu'un qui a mémorisé le Coran en entier ?",
+      "o": [
+        "Un imam",
+        "Un hafiz",
+        "Un mufti",
+        "Un cheikh"
+      ]
+    },
+    "48": {
+      "q": "Quelle est l'aumône volontaire, distincte du zakat obligatoire ?",
+      "o": [
+        "La sadaqa",
+        "Le waqf",
+        "Le fidya",
+        "Le kaffara"
+      ]
+    },
+    "49": {
+      "q": "Comment appelle-t-on l'invocation ou le rappel de Dieu ?",
+      "o": [
+        "Le dhikr",
+        "Le tafsir",
+        "Le fiqh",
+        "Le hadith"
+      ]
+    },
+    "50": {
+      "q": "Combien de rakaats (unités) compte la prière du Fajr ?",
+      "o": [
+        "Deux",
+        "Trois",
+        "Quatre",
+        "Cinq"
+      ]
+    },
+    "51": {
+      "q": "Combien de sourates compte le Coran ?",
+      "o": [
+        "100",
+        "104",
+        "114",
+        "120"
+      ]
+    },
+    "52": {
+      "q": "Quelle est la plus longue sourate du Coran ?",
+      "o": [
+        "Al-Fatiha",
+        "Al-Baqara",
+        "Yasin",
+        "Al-Ikhlas"
+      ]
+    },
+    "53": {
+      "q": "Quelle sourate est la plus courte du Coran ?",
+      "o": [
+        "Al-Ikhlas",
+        "Al-Kawthar",
+        "An-Nasr",
+        "Al-Asr"
+      ]
+    },
+    "54": {
+      "q": "Quelle est la première sourate du Coran ?",
+      "o": [
+        "Al-Baqara",
+        "Al-Fatiha",
+        "Al-Ikhlas",
+        "Yasin"
+      ]
+    },
+    "55": {
+      "q": "Quelle est la dernière sourate du Coran ?",
+      "o": [
+        "Al-Falaq",
+        "An-Nas",
+        "Al-Ikhlas",
+        "Al-Kawthar"
+      ]
+    },
+    "56": {
+      "q": "Combien de versets compte la sourate Al-Fatiha ?",
+      "o": [
+        "Cinq",
+        "Sept",
+        "Neuf",
+        "Onze"
+      ]
+    },
+    "57": {
+      "q": "Comment appelle-t-on un verset du Coran ?",
+      "o": [
+        "Une sourate",
+        "Un ayah",
+        "Un juz",
+        "Un hizb"
+      ]
+    },
+    "58": {
+      "q": "En combien de parties (juz) le Coran est-il traditionnellement divisé ?",
+      "o": [
+        "20",
+        "25",
+        "30",
+        "40"
+      ]
+    },
+    "59": {
+      "q": "Dans quelle langue le Coran a-t-il été révélé ?",
+      "o": [
+        "Le persan",
+        "L'arabe",
+        "L'araméen",
+        "L'hébreu"
+      ]
+    },
+    "60": {
+      "q": "Sur combien d'années la révélation du Coran s'est-elle étalée ?",
+      "o": [
+        "10 ans",
+        "15 ans",
+        "23 ans",
+        "30 ans"
+      ]
+    },
+    "61": {
+      "q": "Comment appelle-t-on les sourates révélées avant l'hégire ?",
+      "o": [
+        "Médinoises",
+        "Mecquoises",
+        "Anciennes",
+        "Primaires"
+      ]
+    },
+    "62": {
+      "q": "Comment appelle-t-on les sourates révélées après l'hégire ?",
+      "o": [
+        "Mecquoises",
+        "Médinoises",
+        "Tardives",
+        "Secondaires"
+      ]
+    },
+    "63": {
+      "q": "Quelle sourate porte le nom d'un animal, la vache ?",
+      "o": [
+        "Al-An'am",
+        "Al-Baqara",
+        "An-Naml",
+        "Al-Fil"
+      ]
+    },
+    "64": {
+      "q": "Quelle sourate porte le nom de la famille de Marie ?",
+      "o": [
+        "Maryam",
+        "Al-Imran",
+        "An-Nisa",
+        "Al-Ahzab"
+      ]
+    },
+    "65": {
+      "q": "Quelle sourate est dédiée à Marie, mère de Jésus ?",
+      "o": [
+        "Al-Fatiha",
+        "Maryam",
+        "Al-Kahf",
+        "Yasin"
+      ]
+    },
+    "66": {
+      "q": "Quel prophète biblique donne son nom à la sourate 71 ?",
+      "o": [
+        "Nuh (Noé)",
+        "Yunus (Jonas)",
+        "Hud",
+        "Salih"
+      ]
+    },
+    "67": {
+      "q": "Quelle sourate raconte l'histoire de Joseph (Yusuf) ?",
+      "o": [
+        "Yusuf",
+        "Yunus",
+        "Hud",
+        "Ibrahim"
+      ]
+    },
+    "68": {
+      "q": "Comment appelle-t-on la traduction/interprétation du Coran ?",
+      "o": [
+        "Le hadith",
+        "Le tafsir",
+        "Le fiqh",
+        "La sunna"
+      ]
+    },
+    "69": {
+      "q": "Quelle sourate est souvent appelée \"le cœur du Coran\" ?",
+      "o": [
+        "Al-Fatiha",
+        "Yasin",
+        "Al-Baqara",
+        "Al-Ikhlas"
+      ]
+    },
+    "70": {
+      "q": "Quelle sourate est dédiée à l'unicité absolue de Dieu ?",
+      "o": [
+        "Al-Fatiha",
+        "Al-Ikhlas",
+        "Al-Baqara",
+        "An-Nas"
+      ]
+    },
+    "71": {
+      "q": "Combien de versets compte la sourate Al-Baqara ?",
+      "o": [
+        "176",
+        "200",
+        "286",
+        "300"
+      ]
+    },
+    "72": {
+      "q": "Quelle nuit est considérée comme la nuit de la révélation du Coran ?",
+      "o": [
+        "Laylat al-Qadr",
+        "Laylat al-Miraj",
+        "Laylat al-Baraa",
+        "Aïd al-Fitr"
+      ]
+    },
+    "73": {
+      "q": "Pendant quelle période du Ramadan Laylat al-Qadr est-elle recherchée ?",
+      "o": [
+        "Les 10 premiers jours",
+        "Les 10 derniers jours",
+        "Le milieu du mois",
+        "Le premier jour"
+      ]
+    },
+    "74": {
+      "q": "Quelle sourate est récitée à chaque unité de prière ?",
+      "o": [
+        "Al-Baqara",
+        "Al-Fatiha",
+        "Yasin",
+        "Al-Kahf"
+      ]
+    },
+    "75": {
+      "q": "Quel prophète est mentionné le plus souvent dans le Coran ?",
+      "o": [
+        "Muhammad",
+        "Moïse (Musa)",
+        "Jésus (Issa)",
+        "Abraham (Ibrahim)"
+      ]
+    },
+    "76": {
+      "q": "Quelle sourate évoque la caverne et ses compagnons ?",
+      "o": [
+        "Al-Kahf",
+        "Al-Fil",
+        "Al-Buruj",
+        "Al-Qamar"
+      ]
+    },
+    "77": {
+      "q": "Quelle sourate est recommandée le vendredi selon la tradition ?",
+      "o": [
+        "Al-Kahf",
+        "Al-Mulk",
+        "Ya-Sin",
+        "Al-Waqi'a"
+      ]
+    },
+    "78": {
+      "q": "Comment appelle-t-on la récitation mélodieuse du Coran ?",
+      "o": [
+        "Le tajwid",
+        "Le tafsir",
+        "Le fiqh",
+        "Le hadith"
+      ]
+    },
+    "79": {
+      "q": "Quelle sourate porte le nom d'un insecte ?",
+      "o": [
+        "An-Naml (la fourmi)",
+        "Al-Fil (l'éléphant)",
+        "Al-Baqara (la vache)",
+        "An-Nahl (l'abeille)"
+      ]
+    },
+    "80": {
+      "q": "Quelle sourate évoque un éléphant ?",
+      "o": [
+        "Al-Fil",
+        "An-Naml",
+        "An-Nahl",
+        "Al-Ankabut"
+      ]
+    },
+    "81": {
+      "q": "Quelle sourate porte le nom d'une araignée ?",
+      "o": [
+        "An-Naml",
+        "Al-Ankabut",
+        "An-Nahl",
+        "Al-Fil"
+      ]
+    },
+    "82": {
+      "q": "Quel calife a supervisé la compilation officielle du Coran en un seul livre ?",
+      "o": [
+        "Abu Bakr",
+        "Umar",
+        "Uthman",
+        "Ali"
+      ]
+    },
+    "83": {
+      "q": "Quel est le nom du premier verset révélé du Coran (premier mot) ?",
+      "o": [
+        "Bismillah",
+        "Iqra (Lis)",
+        "Qul (Dis)",
+        "Alhamdulillah"
+      ]
+    },
+    "84": {
+      "q": "Quelle formule ouvre la majorité des sourates du Coran ?",
+      "o": [
+        "Alhamdulillah",
+        "Bismillah ar-Rahman ar-Rahim",
+        "Subhanallah",
+        "Allahu Akbar"
+      ]
+    }
   }
 }

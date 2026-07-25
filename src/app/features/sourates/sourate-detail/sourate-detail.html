@@ -5,7 +5,7 @@
       <span class="flex items-center justify-center w-7 h-7 rounded-full bg-white shadow-sm group-hover:bg-emerald-50 transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
       </span>
-        Retour aux sourates
+        {{ 'SOURATE_DETAIL.BACK' | translate }}
       </a>
 
       <div class="bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-5 sm:p-7 mb-5 sm:mb-6">
@@ -13,7 +13,7 @@
           <div class="flex items-center gap-2 sm:gap-3 min-w-0">
             <span class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white font-bold text-sm sm:text-base shrink-0">{{ s.numero }}</span>
             <h1 class="text-lg sm:text-2xl font-bold text-gray-900 truncate">{{ s.nom_francais }}</h1>
-            <button (click)="toggleFavori()" class="text-xl sm:text-2xl transition-transform hover:scale-110 shrink-0" [attr.aria-label]="favoriService.isFavori(s.id) ? 'Retirer des favoris' : 'Ajouter aux favoris'">
+            <button (click)="toggleFavori()" class="text-xl sm:text-2xl transition-transform hover:scale-110 shrink-0" [attr.aria-label]="favoriService.isFavori(s.id) ? ('SOURATE_DETAIL.REMOVE_FAVORITE_ARIA' | translate) : ('SOURATE_DETAIL.ADD_FAVORITE_ARIA' | translate)">
               @if (favoriService.isFavori(s.id)) {
                 <span class="text-emerald-600">★</span>
               } @else {
@@ -23,11 +23,11 @@
           </div>
           <span class="text-xl sm:text-3xl text-emerald-700 shrink-0" dir="rtl">{{ s.nom_arabe }}</span>
         </div>
-        <p class="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-5 ml-11 sm:ml-13">{{ s.nombre_versets }} versets · {{ s.revelation }}</p>
+        <p class="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-5 ml-11 sm:ml-13">{{ s.nombre_versets }} {{ 'SOURATES.VERSES' | translate }} · {{ s.revelation }}</p>
 
         @if (reciters().length > 0) {
           <div class="mb-4">
-            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Récitateur</p>
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">{{ 'SOURATE_DETAIL.RECITER_LABEL' | translate }}</p>
             <div class="flex flex-wrap gap-1.5 sm:gap-2">
               @for (reciter of reciters(); track reciter.identifier) {
                 <button
@@ -54,17 +54,17 @@
           <button (click)="togglePlayback()" class="flex items-center gap-2 bg-emerald-600 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm sm:text-base font-semibold shadow-lg shadow-emerald-200 hover:bg-emerald-700 hover:shadow-emerald-300 transition-all">
             @if (isPlaying()) {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" /><rect x="14" y="4" width="4" height="16" /></svg>
-              Pause
+              {{ 'SOURATE_DETAIL.PAUSE' | translate }}
             } @else {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
-              Écouter et lire
+              {{ 'SOURATE_DETAIL.LISTEN_READ' | translate }}
             }
           </button>
 
           @if (isFullyDownloaded()) {
             <a routerLink="/telechargements" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium border border-emerald-200 bg-emerald-50 text-emerald-700">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-              Voir les téléchargements
+              {{ 'SOURATE_DETAIL.VIEW_DOWNLOADS' | translate }}
             </a>
           } @else if (offlineAudio.downloadingUrl()) {
             <div class="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
@@ -76,13 +76,13 @@
           } @else {
             <button (click)="downloadSourate()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium border border-gray-200 text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
-              Télécharger
+              {{ 'SOURATE_DETAIL.DOWNLOAD' | translate }}
             </button>
           }
 
           @if (currentVerseIndex() >= 0) {
             <span class="text-xs sm:text-sm text-gray-400 font-medium ml-auto">
-          Verset {{ currentVerseIndex() + 1 }} / {{ verses().length }}
+          {{ 'SOURATE_DETAIL.VERSE_OF' | translate: { current: currentVerseIndex() + 1, total: verses().length } }}
         </span>
           }
         </div>
@@ -147,7 +147,7 @@
       <button
         (click)="scrollToTop()"
         class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-300 hover:scale-105 transition-transform z-10"
-        aria-label="Retour en haut"
+        [attr.aria-label]="'SOURATE_DETAIL.BACK_TO_TOP_ARIA' | translate"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m18 15-6-6-6 6" />
@@ -156,5 +156,5 @@
     }
   </div>
 } @else {
-  <div class="max-w-3xl mx-auto p-6 text-gray-500">Sourate introuvable.</div>
+  <div class="max-w-3xl mx-auto p-6 text-gray-500">{{ 'SOURATE_DETAIL.NOT_FOUND' | translate }}</div>
 }

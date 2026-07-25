@@ -41,7 +41,10 @@
     "SUBMIT_LOADING": "Logging in...",
     "SUBMIT": "Log in",
     "NO_ACCOUNT": "Don't have an account yet?",
-    "SIGNUP_LINK": "Sign up"
+    "SIGNUP_LINK": "Sign up",
+    "ERROR_NETWORK": "Unable to reach the server. Check your connection.",
+    "ERROR_INVALID_CREDENTIALS": "Incorrect email or password.",
+    "ERROR_GENERIC": "An error occurred. Please try again later."
   },
   "REGISTER": {
     "TITLE": "Create an account",
@@ -57,7 +60,11 @@
     "SUBMIT_LOADING": "Creating account...",
     "SUBMIT": "Create my account",
     "HAS_ACCOUNT": "Already have an account?",
-    "LOGIN_LINK": "Log in"
+    "LOGIN_LINK": "Log in",
+    "ERROR_NETWORK": "Unable to reach the server. Check your connection.",
+    "ERROR_EMAIL_TAKEN": "This email is already in use.",
+    "ERROR_INVALID": "Some information is invalid.",
+    "ERROR_GENERIC": "An error occurred. Please try again later."
   },
   "DHIKR": {
     "TITLE": "Dhikr Counter",
@@ -101,7 +108,855 @@
     "PREV_MONTH_ARIA": "Previous month",
     "NEXT_MONTH_ARIA": "Next month"
   },
+  "SOURATES": {
+    "TITLE": "Surahs",
+    "SEARCH_PLACEHOLDER": "Search for a surah (name or number)...",
+    "NO_RESULTS": "No surah matches",
+    "VERSES": "verses",
+    "DOWNLOADED_ARIA": "Downloaded",
+    "LOAD_ERROR": "Unable to load surahs. Check that the server is running."
+  },
+  "SOURATE_DETAIL": {
+    "BACK": "Back to surahs",
+    "RECITER_LABEL": "Reciter",
+    "PAUSE": "Pause",
+    "LISTEN_READ": "Listen and read",
+    "VIEW_DOWNLOADS": "View downloads",
+    "DOWNLOAD": "Download",
+    "VERSE_OF": "Verse {{current}} / {{total}}",
+    "NOT_FOUND": "Surah not found.",
+    "REMOVE_FAVORITE_ARIA": "Remove from favorites",
+    "ADD_FAVORITE_ARIA": "Add to favorites",
+    "BACK_TO_TOP_ARIA": "Back to top"
+  },
+  "TELECHARGEMENTS": {
+    "TITLE": "Downloads",
+    "SUBTITLE": "Surahs available for offline listening.",
+    "EMPTY_TEXT": "No downloads yet.",
+    "BROWSE_BUTTON": "Browse surahs",
+    "REMOVE_ARIA": "Remove download"
+  },
+  "QUIZ": {
+    "QUESTION_OF": "Question {{current}} / {{total}}",
+    "SCORE": "Score:",
+    "NEXT_QUESTION": "Next question",
+    "SEE_RESULT": "See result",
+    "RESTART": "Restart",
+    "BACK_TO_SOURATES": "Back to surahs",
+    "CONGRATS": "🎉 Congratulations, excellent score!",
+    "RESULT_PERFECT": "Excellent! Perfect score.",
+    "RESULT_GREAT": "Very well played!",
+    "RESULT_OK": "Not bad, keep learning!",
+    "RESULT_LOW": "Keep exploring the surahs to improve."
+  },
+  "HORAIRES": {
+    "TITLE": "Prayer Times",
+    "LOADING": "Locating you and fetching prayer times...",
+    "RETRY": "Retry",
+    "NEXT_PRAYER": "Next prayer",
+    "IN": "in",
+    "IN_PROGRESS": "(in progress)",
+    "CALCULATION_METHOD": "Calculation method",
+    "NOTIFICATIONS": "Notifications",
+    "NOTIFICATIONS_DESC": "Get a reminder at each prayer time (tab open)",
+    "NOTIFICATIONS_BLOCKED": "Notifications are blocked in your browser settings for this site.",
+    "METHOD_MWL": "Muslim World League",
+    "METHOD_UMM_AL_QURA": "Umm al-Qura (Mecca)",
+    "METHOD_EGYPT": "Egypt",
+    "METHOD_UMM_AL_QURA_VAR": "Umm al-Qura (variant)",
+    "METHOD_KARACHI": "Karachi",
+    "UNIT_MIN": "min",
+    "UNIT_HOUR": "h"
+  },
+  "PROFILE": {
+    "TITLE": "My Profile",
+    "FAVORITES": "Favorites",
+    "DOWNLOADS": "Downloads",
+    "TEST_KNOWLEDGE": "Test my knowledge",
+    "BROWSE_SURAHS": "Browse surahs",
+    "LANGUAGE_SECTION": "App language"
+  },
+  "DASHBOARD": {
+    "GREETING": "Assalamu alaykum",
+    "NEXT_PRAYER_CARD": "Next prayer",
+    "VERSE_OF_DAY": "Verse of the day",
+    "MOTIVATION_OF_DAY": "Thought of the day",
+    "VIEW_ALL_PRAYERS": "View all prayer times",
+    "READ_SOURATE": "Read the full surah",
+    "LOADING_VERSE": "Loading verse...",
+    "IN": "in"
+  },
+  "DASHBOARD_MOTIVATIONS": {
+    "1": "\"Indeed, with hardship comes ease.\" (Surah Ash-Sharh, 94:6)",
+    "2": "\"And whoever relies upon Allah, then He is sufficient for him.\" (Surah At-Talaq, 65:3)",
+    "3": "\"Allah does not charge a soul except with that within its capacity.\" (Surah Al-Baqara, 2:286)",
+    "4": "\"Patience is a light.\" — Hadith reported by Muslim",
+    "5": "\"The best among you are those who learn the Quran and teach it.\" — Hadith reported by Al-Bukhari",
+    "6": "\"Do not despair of the mercy of Allah.\" (Surah Az-Zumar, 39:53)",
+    "7": "\"Remind, for reminding benefits the believers.\" (Surah Adh-Dhariyat, 51:55)",
+    "8": "\"Whoever takes a path seeking knowledge, Allah makes easy for him a path to Paradise.\" — Hadith reported by Muslim",
+    "9": "\"And worship your Lord until certainty comes to you.\" (Surah Al-Hijr, 15:99)",
+    "10": "\"Actions are but by intentions.\" — Hadith reported by Al-Bukhari"
+  },
   "COMMON": {
     "LANGUAGE": "Language"
+  },
+  "QUIZ_QUESTIONS": {
+    "1": {
+      "q": "How many pillars of Islam are there?",
+      "o": [
+        "Three",
+        "Five",
+        "Seven",
+        "Ten"
+      ]
+    },
+    "2": {
+      "q": "What is the first pillar of Islam?",
+      "o": [
+        "Prayer",
+        "Fasting",
+        "The shahada",
+        "The hajj"
+      ]
+    },
+    "3": {
+      "q": "What does the word \"Islam\" mean?",
+      "o": [
+        "Peace",
+        "Submission",
+        "Faith",
+        "Unity"
+      ]
+    },
+    "4": {
+      "q": "What do we call a follower of Islam?",
+      "o": [
+        "A Muslim",
+        "A believer",
+        "A faithful",
+        "A disciple"
+      ]
+    },
+    "5": {
+      "q": "What is the name of the last prophet in Islam?",
+      "o": [
+        "Moses",
+        "Jesus",
+        "Muhammad",
+        "Abraham"
+      ]
+    },
+    "6": {
+      "q": "In which city was the prophet Muhammad (ﷺ) born?",
+      "o": [
+        "Medina",
+        "Mecca",
+        "Jerusalem",
+        "Damascus"
+      ]
+    },
+    "7": {
+      "q": "What do we call the place of worship for Muslims?",
+      "o": [
+        "A church",
+        "A synagogue",
+        "A mosque",
+        "A temple"
+      ]
+    },
+    "8": {
+      "q": "What is the name of the Muslim declaration of faith?",
+      "o": [
+        "The salat",
+        "The shahada",
+        "The zakat",
+        "The sawm"
+      ]
+    },
+    "9": {
+      "q": "What is the fifth pillar of Islam?",
+      "o": [
+        "The zakat",
+        "Prayer",
+        "The pilgrimage",
+        "Fasting"
+      ]
+    },
+    "10": {
+      "q": "What do we call the obligatory almsgiving in Islam?",
+      "o": [
+        "The sawm",
+        "The zakat",
+        "The hajj",
+        "The salat"
+      ]
+    },
+    "11": {
+      "q": "In which direction do Muslims face to pray?",
+      "o": [
+        "Medina",
+        "Jerusalem",
+        "Mecca",
+        "Damascus"
+      ]
+    },
+    "12": {
+      "q": "What do we call the direction of prayer?",
+      "o": [
+        "The mihrab",
+        "The qibla",
+        "The minaret",
+        "The minbar"
+      ]
+    },
+    "13": {
+      "q": "Which angel revealed the Quran to the prophet Muhammad (ﷺ)?",
+      "o": [
+        "Michael",
+        "Gabriel",
+        "Israfil",
+        "Azrael"
+      ]
+    },
+    "14": {
+      "q": "In which cave did the prophet Muhammad (ﷺ) receive the first revelation?",
+      "o": [
+        "Hira",
+        "Thawr",
+        "Uhud",
+        "Badr"
+      ]
+    },
+    "15": {
+      "q": "What is the name of the night journey of the prophet Muhammad (ﷺ)?",
+      "o": [
+        "The hajj",
+        "Al-Isra wal-Miraj",
+        "The hijra",
+        "Ramadan"
+      ]
+    },
+    "16": {
+      "q": "What do we call the prophet's emigration from Mecca to Medina?",
+      "o": [
+        "The hijra",
+        "The hajj",
+        "The zakat",
+        "The sawm"
+      ]
+    },
+    "17": {
+      "q": "Which calendar does Islam use?",
+      "o": [
+        "Solar",
+        "Lunar",
+        "Gregorian",
+        "Julian"
+      ]
+    },
+    "18": {
+      "q": "What is the name of the holy book of Islam?",
+      "o": [
+        "The Torah",
+        "The Quran",
+        "The Bible",
+        "The Vedas"
+      ]
+    },
+    "19": {
+      "q": "How many pillars of faith (iman) are there in Islam?",
+      "o": [
+        "Four",
+        "Five",
+        "Six",
+        "Seven"
+      ]
+    },
+    "20": {
+      "q": "Who is considered the first prophet in Islam?",
+      "o": [
+        "Noah",
+        "Adam",
+        "Abraham",
+        "Moses"
+      ]
+    },
+    "21": {
+      "q": "Which prophet is associated with building the Kaaba?",
+      "o": [
+        "Moses",
+        "Abraham",
+        "Jesus",
+        "Noah"
+      ]
+    },
+    "22": {
+      "q": "What do we call the sayings and deeds of the prophet Muhammad (ﷺ)?",
+      "o": [
+        "The fiqh",
+        "The sunna",
+        "The sharia",
+        "The tafsir"
+      ]
+    },
+    "23": {
+      "q": "What do we call Islamic law?",
+      "o": [
+        "The sharia",
+        "The sunna",
+        "The hadith",
+        "The tawhid"
+      ]
+    },
+    "24": {
+      "q": "What does the word \"tawhid\" mean?",
+      "o": [
+        "Prayer",
+        "The oneness of God",
+        "Fasting",
+        "Charity"
+      ]
+    },
+    "25": {
+      "q": "What is the name given to accounts reporting the sayings of the prophet Muhammad (ﷺ)?",
+      "o": [
+        "The surahs",
+        "The hadiths",
+        "The verses",
+        "The pillars"
+      ]
+    },
+    "26": {
+      "q": "How many obligatory daily prayers are there?",
+      "o": [
+        "Three",
+        "Four",
+        "Five",
+        "Six"
+      ]
+    },
+    "27": {
+      "q": "What do we call the ritual ablutions?",
+      "o": [
+        "The wudu",
+        "The sawm",
+        "The zakat",
+        "The hajj"
+      ]
+    },
+    "28": {
+      "q": "What is the first prayer of the day?",
+      "o": [
+        "Dhuhr",
+        "Fajr",
+        "Asr",
+        "Maghrib"
+      ]
+    },
+    "29": {
+      "q": "What is the last prayer of the day?",
+      "o": [
+        "Maghrib",
+        "Isha",
+        "Asr",
+        "Dhuhr"
+      ]
+    },
+    "30": {
+      "q": "At what time is the Maghrib prayer performed?",
+      "o": [
+        "At dawn",
+        "At noon",
+        "At sunset",
+        "At night"
+      ]
+    },
+    "31": {
+      "q": "During which month do Muslims fast?",
+      "o": [
+        "Shaaban",
+        "Ramadan",
+        "Muharram",
+        "Rajab"
+      ]
+    },
+    "32": {
+      "q": "What do we call the meal eaten before dawn during Ramadan?",
+      "o": [
+        "The iftar",
+        "The suhur",
+        "The tarawih",
+        "The zakat"
+      ]
+    },
+    "33": {
+      "q": "What do we call the meal that breaks the fast?",
+      "o": [
+        "The suhur",
+        "The iftar",
+        "The tarawih",
+        "The witr"
+      ]
+    },
+    "34": {
+      "q": "What do we call the special night prayers of Ramadan?",
+      "o": [
+        "Tarawih",
+        "Witr",
+        "Duha",
+        "Tahajjud"
+      ]
+    },
+    "35": {
+      "q": "Which celebration marks the end of Ramadan?",
+      "o": [
+        "Eid al-Adha",
+        "Eid al-Fitr",
+        "Ashura",
+        "Mawlid"
+      ]
+    },
+    "36": {
+      "q": "Which celebration commemorates the sacrifice of Abraham?",
+      "o": [
+        "Eid al-Fitr",
+        "Eid al-Adha",
+        "Ashura",
+        "Mawlid"
+      ]
+    },
+    "37": {
+      "q": "What do we call the pilgrimage to Mecca?",
+      "o": [
+        "The sawm",
+        "The zakat",
+        "The hajj",
+        "The salat"
+      ]
+    },
+    "38": {
+      "q": "How many times must a Muslim perform the hajj at minimum?",
+      "o": [
+        "Never",
+        "Once in a lifetime if able",
+        "Every year",
+        "Five times"
+      ]
+    },
+    "39": {
+      "q": "What do we call the minor pilgrimage, doable at any time?",
+      "o": [
+        "The hajj",
+        "The umrah",
+        "The tawaf",
+        "The sa'i"
+      ]
+    },
+    "40": {
+      "q": "What do we call walking around the Kaaba?",
+      "o": [
+        "The sa'i",
+        "The tawaf",
+        "The wuquf",
+        "The ramy"
+      ]
+    },
+    "41": {
+      "q": "Who is exempt from Ramadan fasting for health reasons?",
+      "o": [
+        "No one",
+        "The sick",
+        "Only children",
+        "Only women"
+      ]
+    },
+    "42": {
+      "q": "What do we call the call to prayer?",
+      "o": [
+        "The khutba",
+        "The adhan",
+        "The tafsir",
+        "The dhikr"
+      ]
+    },
+    "43": {
+      "q": "Who traditionally gives the call to prayer?",
+      "o": [
+        "The imam",
+        "The muezzin",
+        "The caliph",
+        "The scholar"
+      ]
+    },
+    "44": {
+      "q": "What do we call the one who leads the collective prayer?",
+      "o": [
+        "The muezzin",
+        "The imam",
+        "The caliph",
+        "The hafiz"
+      ]
+    },
+    "45": {
+      "q": "On which day of the week is the Friday collective prayer held?",
+      "o": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "46": {
+      "q": "What do we call the sermon given before Friday prayer?",
+      "o": [
+        "The dhikr",
+        "The khutba",
+        "The tafsir",
+        "The adhan"
+      ]
+    },
+    "47": {
+      "q": "What do we call someone who has memorized the whole Quran?",
+      "o": [
+        "An imam",
+        "A hafiz",
+        "A mufti",
+        "A sheikh"
+      ]
+    },
+    "48": {
+      "q": "What is the voluntary charity, distinct from the obligatory zakat?",
+      "o": [
+        "The sadaqa",
+        "The waqf",
+        "The fidya",
+        "The kaffara"
+      ]
+    },
+    "49": {
+      "q": "What do we call the invocation or remembrance of God?",
+      "o": [
+        "The dhikr",
+        "The tafsir",
+        "The fiqh",
+        "The hadith"
+      ]
+    },
+    "50": {
+      "q": "How many rakaats (units) does the Fajr prayer have?",
+      "o": [
+        "Two",
+        "Three",
+        "Four",
+        "Five"
+      ]
+    },
+    "51": {
+      "q": "How many surahs does the Quran contain?",
+      "o": [
+        "100",
+        "104",
+        "114",
+        "120"
+      ]
+    },
+    "52": {
+      "q": "What is the longest surah in the Quran?",
+      "o": [
+        "Al-Fatiha",
+        "Al-Baqara",
+        "Yasin",
+        "Al-Ikhlas"
+      ]
+    },
+    "53": {
+      "q": "Which surah is the shortest in the Quran?",
+      "o": [
+        "Al-Ikhlas",
+        "Al-Kawthar",
+        "An-Nasr",
+        "Al-Asr"
+      ]
+    },
+    "54": {
+      "q": "What is the first surah of the Quran?",
+      "o": [
+        "Al-Baqara",
+        "Al-Fatiha",
+        "Al-Ikhlas",
+        "Yasin"
+      ]
+    },
+    "55": {
+      "q": "What is the last surah of the Quran?",
+      "o": [
+        "Al-Falaq",
+        "An-Nas",
+        "Al-Ikhlas",
+        "Al-Kawthar"
+      ]
+    },
+    "56": {
+      "q": "How many verses does the surah Al-Fatiha have?",
+      "o": [
+        "Five",
+        "Seven",
+        "Nine",
+        "Eleven"
+      ]
+    },
+    "57": {
+      "q": "What do we call a verse of the Quran?",
+      "o": [
+        "A surah",
+        "An ayah",
+        "A juz",
+        "A hizb"
+      ]
+    },
+    "58": {
+      "q": "Into how many parts (juz) is the Quran traditionally divided?",
+      "o": [
+        "20",
+        "25",
+        "30",
+        "40"
+      ]
+    },
+    "59": {
+      "q": "In which language was the Quran revealed?",
+      "o": [
+        "Persian",
+        "Arabic",
+        "Aramaic",
+        "Hebrew"
+      ]
+    },
+    "60": {
+      "q": "Over how many years did the revelation of the Quran take place?",
+      "o": [
+        "10 years",
+        "15 years",
+        "23 years",
+        "30 years"
+      ]
+    },
+    "61": {
+      "q": "What do we call the surahs revealed before the hijra?",
+      "o": [
+        "Medinan",
+        "Meccan",
+        "Ancient",
+        "Primary"
+      ]
+    },
+    "62": {
+      "q": "What do we call the surahs revealed after the hijra?",
+      "o": [
+        "Meccan",
+        "Medinan",
+        "Late",
+        "Secondary"
+      ]
+    },
+    "63": {
+      "q": "Which surah is named after an animal, the cow?",
+      "o": [
+        "Al-An'am",
+        "Al-Baqara",
+        "An-Naml",
+        "Al-Fil"
+      ]
+    },
+    "64": {
+      "q": "Which surah is named after the family of Mary?",
+      "o": [
+        "Maryam",
+        "Al-Imran",
+        "An-Nisa",
+        "Al-Ahzab"
+      ]
+    },
+    "65": {
+      "q": "Which surah is dedicated to Mary, mother of Jesus?",
+      "o": [
+        "Al-Fatiha",
+        "Maryam",
+        "Al-Kahf",
+        "Yasin"
+      ]
+    },
+    "66": {
+      "q": "Which biblical prophet gives his name to surah 71?",
+      "o": [
+        "Nuh (Noah)",
+        "Yunus (Jonah)",
+        "Hud",
+        "Salih"
+      ]
+    },
+    "67": {
+      "q": "Which surah tells the story of Joseph (Yusuf)?",
+      "o": [
+        "Yusuf",
+        "Yunus",
+        "Hud",
+        "Ibrahim"
+      ]
+    },
+    "68": {
+      "q": "What do we call the translation/interpretation of the Quran?",
+      "o": [
+        "The hadith",
+        "The tafsir",
+        "The fiqh",
+        "The sunna"
+      ]
+    },
+    "69": {
+      "q": "Which surah is often called \"the heart of the Quran\"?",
+      "o": [
+        "Al-Fatiha",
+        "Yasin",
+        "Al-Baqara",
+        "Al-Ikhlas"
+      ]
+    },
+    "70": {
+      "q": "Which surah is dedicated to the absolute oneness of God?",
+      "o": [
+        "Al-Fatiha",
+        "Al-Ikhlas",
+        "Al-Baqara",
+        "An-Nas"
+      ]
+    },
+    "71": {
+      "q": "How many verses does surah Al-Baqara have?",
+      "o": [
+        "176",
+        "200",
+        "286",
+        "300"
+      ]
+    },
+    "72": {
+      "q": "Which night is considered the night of the Quran's revelation?",
+      "o": [
+        "Laylat al-Qadr",
+        "Laylat al-Miraj",
+        "Laylat al-Baraa",
+        "Eid al-Fitr"
+      ]
+    },
+    "73": {
+      "q": "During which period of Ramadan is Laylat al-Qadr sought?",
+      "o": [
+        "The first 10 days",
+        "The last 10 days",
+        "The middle of the month",
+        "The first day"
+      ]
+    },
+    "74": {
+      "q": "Which surah is recited in every unit of prayer?",
+      "o": [
+        "Al-Baqara",
+        "Al-Fatiha",
+        "Yasin",
+        "Al-Kahf"
+      ]
+    },
+    "75": {
+      "q": "Which prophet is mentioned most often in the Quran?",
+      "o": [
+        "Muhammad",
+        "Moses (Musa)",
+        "Jesus (Issa)",
+        "Abraham (Ibrahim)"
+      ]
+    },
+    "76": {
+      "q": "Which surah mentions the cave and its companions?",
+      "o": [
+        "Al-Kahf",
+        "Al-Fil",
+        "Al-Buruj",
+        "Al-Qamar"
+      ]
+    },
+    "77": {
+      "q": "Which surah is recommended on Friday according to tradition?",
+      "o": [
+        "Al-Kahf",
+        "Al-Mulk",
+        "Ya-Sin",
+        "Al-Waqi'a"
+      ]
+    },
+    "78": {
+      "q": "What do we call the melodious recitation of the Quran?",
+      "o": [
+        "The tajwid",
+        "The tafsir",
+        "The fiqh",
+        "The hadith"
+      ]
+    },
+    "79": {
+      "q": "Which surah is named after an insect?",
+      "o": [
+        "An-Naml (the ant)",
+        "Al-Fil (the elephant)",
+        "Al-Baqara (the cow)",
+        "An-Nahl (the bee)"
+      ]
+    },
+    "80": {
+      "q": "Which surah mentions an elephant?",
+      "o": [
+        "Al-Fil",
+        "An-Naml",
+        "An-Nahl",
+        "Al-Ankabut"
+      ]
+    },
+    "81": {
+      "q": "Which surah is named after a spider?",
+      "o": [
+        "An-Naml",
+        "Al-Ankabut",
+        "An-Nahl",
+        "Al-Fil"
+      ]
+    },
+    "82": {
+      "q": "Which caliph oversaw the official compilation of the Quran into one book?",
+      "o": [
+        "Abu Bakr",
+        "Umar",
+        "Uthman",
+        "Ali"
+      ]
+    },
+    "83": {
+      "q": "What is the first word revealed of the Quran?",
+      "o": [
+        "Bismillah",
+        "Iqra (Read)",
+        "Qul (Say)",
+        "Alhamdulillah"
+      ]
+    },
+    "84": {
+      "q": "Which formula opens most surahs of the Quran?",
+      "o": [
+        "Alhamdulillah",
+        "Bismillah ar-Rahman ar-Rahim",
+        "Subhanallah",
+        "Allahu Akbar"
+      ]
+    }
   }
 }

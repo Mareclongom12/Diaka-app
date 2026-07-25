@@ -15,7 +15,7 @@
   </svg>
 
   <div class="relative max-w-3xl mx-auto p-4 sm:p-6">
-    <h1 class="text-xl sm:text-2xl font-bold mb-4 text-gray-900">Les Sourates</h1>
+    <h1 class="text-xl sm:text-2xl font-bold mb-4 text-gray-900">{{ 'SOURATES.TITLE' | translate }}</h1>
     <div class="relative mb-4 sm:mb-6">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
         <circle cx="11" cy="11" r="8" />
@@ -23,7 +23,7 @@
       </svg>
       <input
         type="text"
-        placeholder="Rechercher une sourate (nom ou numéro)..."
+        [placeholder]="'SOURATES.SEARCH_PLACEHOLDER' | translate"
         [ngModel]="searchTerm()"
         (ngModelChange)="onSearchChange($event)"
         class="w-full pl-10 pr-4 py-2.5 rounded-full border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
@@ -44,10 +44,10 @@
           </div>
         }
       </div>
-    } @else if (error()) {
-      <p class="text-red-600">{{ error() }}</p>
+    } @else if (hasError()) {
+      <p class="text-red-600">{{ 'SOURATES.LOAD_ERROR' | translate }}</p>
     } @else if (filteredSourates().length === 0) {
-      <p class="text-gray-500 text-center py-8">Aucune sourate ne correspond à "{{ searchTerm() }}".</p>
+      <p class="text-gray-500 text-center py-8">{{ 'SOURATES.NO_RESULTS' | translate }} "{{ searchTerm() }}".</p>
     } @else {
       <div class="space-y-2.5">
         @for (sourate of filteredSourates(); track sourate.id) {
@@ -58,12 +58,12 @@
                 <div class="flex items-center gap-1.5">
                   <p class="font-semibold text-gray-800 text-sm sm:text-base truncate">{{ sourate.nom_francais }}</p>
                   @if (isDownloaded(sourate.id)) {
-                    <span class="flex items-center justify-center w-4 h-4 rounded-full bg-emerald-600 shrink-0" aria-label="Téléchargée">
+                    <span class="flex items-center justify-center w-4 h-4 rounded-full bg-emerald-600 shrink-0" [attr.aria-label]="'SOURATES.DOWNLOADED_ARIA' | translate">
                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
               </span>
                   }
                 </div>
-                <p class="text-xs sm:text-sm text-gray-500 truncate">{{ sourate.nombre_versets }} versets · {{ sourate.revelation }}</p>
+                <p class="text-xs sm:text-sm text-gray-500 truncate">{{ sourate.nombre_versets }} {{ 'SOURATES.VERSES' | translate }} · {{ sourate.revelation }}</p>
               </div>
             </div>
             <span class="text-lg sm:text-xl text-emerald-700 shrink-0" dir="rtl">{{ sourate.nom_arabe }}</span>

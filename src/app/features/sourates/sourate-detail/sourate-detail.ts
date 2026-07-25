@@ -1,5 +1,6 @@
 import { Component, inject, signal, computed, ElementRef, ViewChildren, QueryList, HostListener, effect } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { FavoriService } from '../../../core/services/favori';
 import { SourateService } from '../../../core/services/sourate';
 import { QuranTextService, QuranReciter } from '../../../core/services/quran-text';
@@ -12,7 +13,7 @@ const RECITEURS_PRINCIPAUX = ['ar.alafasy', 'ar.abdurrahmaansudais', 'ar.saoodsh
 
 @Component({
   selector: 'app-sourate-detail',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe],
   templateUrl: './sourate-detail.html',
   styleUrl: './sourate-detail.scss',
 })

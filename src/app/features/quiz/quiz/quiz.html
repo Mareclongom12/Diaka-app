@@ -18,8 +18,8 @@
     @if (!finished()) {
       <div class="mb-6">
         <div class="flex items-center justify-between text-sm text-gray-500 mb-2">
-          <span>Question {{ currentIndex() + 1 }} / {{ questions.length }}</span>
-          <span>Score : {{ score() }}</span>
+          <span>{{ 'QUIZ.QUESTION_OF' | translate: { current: currentIndex() + 1, total: questions.length } }}</span>
+          <span>{{ 'QUIZ.SCORE' | translate }} {{ score() }}</span>
         </div>
         <div class="h-1.5 bg-gray-100 rounded-full overflow-hidden">
           <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full transition-all duration-300" [style.width.%]="progress()"></div>
@@ -52,7 +52,7 @@
 
         @if (showAnswer()) {
           <button (click)="nextQuestion()" class="w-full mt-6 bg-emerald-600 text-white py-3 rounded-xl font-semibold shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all">
-            {{ currentIndex() + 1 >= questions.length ? 'Voir le résultat' : 'Question suivante' }}
+            {{ currentIndex() + 1 >= questions.length ? ('QUIZ.SEE_RESULT' | translate) : ('QUIZ.NEXT_QUESTION' | translate) }}
           </button>
         }
       </div>
@@ -78,17 +78,17 @@
         <p class="relative text-3xl font-bold text-gray-900 mb-1">{{ score() }} / {{ questions.length }}</p>
         <p class="relative text-gray-500 mb-2">{{ resultMessage() }}</p>
         @if (isCelebration()) {
-          <p class="relative text-emerald-600 font-semibold mb-6">🎉 Félicitations, excellent score !</p>
+          <p class="relative text-emerald-600 font-semibold mb-6">{{ 'QUIZ.CONGRATS' | translate }}</p>
         } @else {
           <div class="mb-6"></div>
         }
 
         <div class="relative flex flex-col sm:flex-row gap-3">
           <button (click)="restart()" class="flex-1 bg-emerald-600 text-white py-3 rounded-xl font-semibold shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all">
-            Recommencer
+            {{ 'QUIZ.RESTART' | translate }}
           </button>
           <a routerLink="/sourates" class="flex-1 bg-white text-emerald-700 py-3 rounded-xl font-semibold border-2 border-emerald-100 hover:bg-emerald-50 transition-all text-center">
-            Retour aux sourates
+            {{ 'QUIZ.BACK_TO_SOURATES' | translate }}
           </a>
         </div>
       </div>

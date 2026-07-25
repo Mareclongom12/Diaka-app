@@ -41,7 +41,10 @@
     "SUBMIT_LOADING": "Duggu...",
     "SUBMIT": "Dugg",
     "NO_ACCOUNT": "Amoo kont?",
-    "SIGNUP_LINK": "Sos kont"
+    "SIGNUP_LINK": "Sos kont",
+    "ERROR_NETWORK": "Mënuma jokkoo ak server bi. Xool sa jokkoo internet.",
+    "ERROR_INVALID_CREDENTIALS": "Imeel walla baatu tééréwaay baaxul.",
+    "ERROR_GENERIC": "Am na njumte. Jéemaat kanam si."
   },
   "REGISTER": {
     "TITLE": "Sos sa kont",
@@ -57,7 +60,11 @@
     "SUBMIT_LOADING": "Di sosaate...",
     "SUBMIT": "Sos sama kont",
     "HAS_ACCOUNT": "Am nga kont ba léegi?",
-    "LOGIN_LINK": "Dugg"
+    "LOGIN_LINK": "Dugg",
+    "ERROR_NETWORK": "Mënuma jokkoo ak server bi. Xool sa jokkoo internet.",
+    "ERROR_EMAIL_TAKEN": "Imeel bii nekk na ba noppi.",
+    "ERROR_INVALID": "Yenn xibaar yi baaxuñu.",
+    "ERROR_GENERIC": "Am na njumte. Jéemaat kanam si."
   },
   "DHIKR": {
     "TITLE": "Xayma Sikar",
@@ -101,7 +108,855 @@
     "PREV_MONTH_ARIA": "Weer wi jiitu",
     "NEXT_MONTH_ARIA": "Weer wi topp"
   },
+  "SOURATES": {
+    "TITLE": "Simu yi",
+    "SEARCH_PLACEHOLDER": "Seetal benn simu (tur wala limib)...",
+    "NO_RESULTS": "Amul simu bu bokk ak",
+    "VERSES": "ayah",
+    "DOWNLOADED_ARIA": "Yebbi na",
+    "LOAD_ERROR": "Mënuma yebbi simu yi. Xool ndax server bi dafa taxaw."
+  },
+  "SOURATE_DETAIL": {
+    "BACK": "Dellu ci simu yi",
+    "RECITER_LABEL": "Saytaan",
+    "PAUSE": "Taxaw",
+    "LISTEN_READ": "Dégluwaale te jàng",
+    "VIEW_DOWNLOADS": "Seet yebbi yi",
+    "DOWNLOAD": "Yebbi",
+    "VERSE_OF": "Ayah {{current}} / {{total}}",
+    "NOT_FOUND": "Simu bi feesulko.",
+    "REMOVE_FAVORITE_ARIA": "Jël ci bànneexal",
+    "ADD_FAVORITE_ARIA": "Yokk ci bànneexal",
+    "BACK_TO_TOP_ARIA": "Dellu ci kaw"
+  },
+  "TELECHARGEMENTS": {
+    "TITLE": "Yebbi",
+    "SUBTITLE": "Simu yi nga mën a dégluwaale su amul internet.",
+    "EMPTY_TEXT": "Amul yebbi ba léegi.",
+    "BROWSE_BUTTON": "Seet simu yi",
+    "REMOVE_ARIA": "Far yebbi bi"
+  },
+  "QUIZ": {
+    "QUESTION_OF": "Laaj {{current}} / {{total}}",
+    "SCORE": "Xay:",
+    "NEXT_QUESTION": "Laaj bi topp",
+    "SEE_RESULT": "Seet natt bi",
+    "RESTART": "Dellu tambali",
+    "BACK_TO_SOURATES": "Dellu ci simu yi",
+    "CONGRATS": "🎉 Njiitalaal, xay bu baax lool!",
+    "RESULT_PERFECT": "Njiitalaal! Xay bu mat sëkk.",
+    "RESULT_GREAT": "Def nga ko bu baax lool!",
+    "RESULT_OK": "Baaxul dara, wéy ci jàng!",
+    "RESULT_LOW": "Wéy di seetlu simu yi ngir gën a jëm kanam."
+  },
+  "HORAIRES": {
+    "TITLE": "Waxtuw Ñaan yi",
+    "LOADING": "Di seet fu nekk te jël waxtu ñaan yi...",
+    "RETRY": "Jéemaat",
+    "NEXT_PRAYER": "Ñaan bi topp",
+    "IN": "ci",
+    "IN_PROGRESS": "(mu di dox)",
+    "CALCULATION_METHOD": "Anam xayma",
+    "NOTIFICATIONS": "Xibaar yu ñëw",
+    "NOTIFICATIONS_DESC": "Am xibaar ci waxtu ñaan bu nekk (onglet ubbi)",
+    "NOTIFICATIONS_BLOCKED": "Xibaar yi dañu leen tëj ci paramaar navigateur bi ngir sit bii.",
+    "METHOD_MWL": "Ligue Islamique Mondiale",
+    "METHOD_UMM_AL_QURA": "Umm al-Qura (Makka)",
+    "METHOD_EGYPT": "Ejipt",
+    "METHOD_UMM_AL_QURA_VAR": "Umm al-Qura (yeneen)",
+    "METHOD_KARACHI": "Karachi",
+    "UNIT_MIN": "simili",
+    "UNIT_HOUR": "waxtu"
+  },
+  "PROFILE": {
+    "TITLE": "Sama profil",
+    "FAVORITES": "Bànneexal",
+    "DOWNLOADS": "Yebbi",
+    "TEST_KNOWLEDGE": "Saytu sama xam-xam",
+    "BROWSE_SURAHS": "Seet simu yi",
+    "LANGUAGE_SECTION": "Làkku aplikasion bi"
+  },
+  "DASHBOARD": {
+    "GREETING": "Asalaamu alaykum",
+    "NEXT_PRAYER_CARD": "Ñaan bi topp",
+    "VERSE_OF_DAY": "Ayahu bis bi",
+    "MOTIVATION_OF_DAY": "Xalaatu bis bi",
+    "VIEW_ALL_PRAYERS": "Seet waxtu ñaan yépp",
+    "READ_SOURATE": "Jàng simu bi bépp",
+    "LOADING_VERSE": "Di yebbi ayah bi...",
+    "IN": "ci"
+  },
+  "DASHBOARD_MOTIVATIONS": {
+    "1": "« Ci gaaw gi am na woyof. » (Simu Ash-Charh, 94:6)",
+    "2": "« Ku wàkkirlu ci Yàlla, moo ko doy. » (Simu At-Talaq, 65:3)",
+    "3": "« Yàlla du sant nit ku ëpp dooley biir. » (Simu Al-Baqara, 2:286)",
+    "4": "« Muñ mooy leer. » — Hadiis, Muslim moo ko wone",
+    "5": "« Ku gën ci yéen mooy ki jàng Alxuraan te jàngale ko. » — Hadiis, Al-Bukhaari moo ko wone",
+    "6": "« Bul nangu yàqu ci yërmandeg Yàlla. » (Simu Az-Zumar, 39:53)",
+    "7": "« Fàttali, ndax fàttali dana jariñ way-ngëm yi. » (Simu Adh-Dhaariyaat, 51:55)",
+    "8": "« Ku jël yoon ngir seet xam-xam, Yàlla dana ko woyofal yoon ci Aljana. » — Hadiis, Muslim moo ko wone",
+    "9": "« Jaamu sa Boroom ba kera wér gi ñëw ci yow. » (Simu Al-Hijr, 15:99)",
+    "10": "« Jëf yi seen njariñ jëm ci coobare gi. » — Hadiis, Al-Bukhaari moo ko wone"
+  },
   "COMMON": {
     "LANGUAGE": "Làkk"
+  },
+  "QUIZ_QUESTIONS": {
+    "1": {
+      "q": "Ñaata bant yu lislaam am na ?",
+      "o": [
+        "Ñett",
+        "Juróom",
+        "Juróom-ñaar",
+        "Fukk"
+      ]
+    },
+    "2": {
+      "q": "Kan mooy bant bu njëkk ci lislaam ?",
+      "o": [
+        "Ñaan",
+        "Woor",
+        "Chahaada",
+        "Hajj"
+      ]
+    },
+    "3": {
+      "q": "Lan mooy baatu \"islaam\" ?",
+      "o": [
+        "Jàmm",
+        "Wommat sa bopp ci Yàlla",
+        "Ngëm",
+        "Benn"
+      ]
+    },
+    "4": {
+      "q": "Naka lañu tudde ku topp lislaam ?",
+      "o": [
+        "Jullit",
+        "Ku gëm",
+        "Ku takk",
+        "Taalibe"
+      ]
+    },
+    "5": {
+      "q": "Ku ci digg yonnent bi mujj ci lislaam ?",
+      "o": [
+        "Musaa",
+        "Iisaa",
+        "Muhammad",
+        "Ibrahima"
+      ]
+    },
+    "6": {
+      "q": "Ci ban dëkk la yonnent Muhammad (ﷺ) juddoo ?",
+      "o": [
+        "Madiina",
+        "Makka",
+        "Jerusalem",
+        "Damas"
+      ]
+    },
+    "7": {
+      "q": "Naka lañu tudde fu jullit yi di ñaan ?",
+      "o": [
+        "Bit-kerest",
+        "Sinagog",
+        "Jàkka",
+        "Tempal"
+      ]
+    },
+    "8": {
+      "q": "Lan mooy turu wonewaay ngëmu jullit ?",
+      "o": [
+        "Salaa",
+        "Chahaada",
+        "Sarax",
+        "Woor"
+      ]
+    },
+    "9": {
+      "q": "Lan mooy bant bu juróom ci lislaam ?",
+      "o": [
+        "Sarax",
+        "Ñaan",
+        "Aj",
+        "Woor"
+      ]
+    },
+    "10": {
+      "q": "Naka lañu tudde sarax bu farata ci lislaam ?",
+      "o": [
+        "Woor",
+        "Sarax (Zakaat)",
+        "Aj",
+        "Salaa"
+      ]
+    },
+    "11": {
+      "q": "Ci ban wet la jullit yi di jublu ngir ñaan ?",
+      "o": [
+        "Madiina",
+        "Jerusalem",
+        "Makka",
+        "Damas"
+      ]
+    },
+    "12": {
+      "q": "Naka lañu tudde jubluwaayu ñaan bi ?",
+      "o": [
+        "Mihraab",
+        "Qibla",
+        "Minare",
+        "Minbar"
+      ]
+    },
+    "13": {
+      "q": "Ban malaaka mooy wàcce Alxuraan ci yonnent Muhammad (ﷺ) ?",
+      "o": [
+        "Mikaayil",
+        "Jibril",
+        "Israafiil",
+        "Azraayil"
+      ]
+    },
+    "14": {
+      "q": "Ci ban kaaba la yonnent Muhammad (ﷺ) jot wàcce bu njëkk bi ?",
+      "o": [
+        "Hiraa",
+        "Thawr",
+        "Uhud",
+        "Badr"
+      ]
+    },
+    "15": {
+      "q": "Lan mooy turu tukki bu guddi bi yonnent Muhammad (ﷺ) def ?",
+      "o": [
+        "Aj",
+        "Al-Israa wal-Miraaj",
+        "Hijra",
+        "Ramadaan"
+      ]
+    },
+    "16": {
+      "q": "Naka lañu tudde tukkeb yonnent bi ci Makka jëm Madiina ?",
+      "o": [
+        "Hijra",
+        "Aj",
+        "Sarax",
+        "Woor"
+      ]
+    },
+    "17": {
+      "q": "Ban almanax la lislaam jëfandikoo ?",
+      "o": [
+        "Bu jant",
+        "Bu weer",
+        "Gregoryeŋ",
+        "Jiliyeŋ"
+      ]
+    },
+    "18": {
+      "q": "Lan mooy turu téere bu sell bu lislaam ?",
+      "o": [
+        "Tawreet",
+        "Alxuraan",
+        "Bibbal",
+        "Veeda yi"
+      ]
+    },
+    "19": {
+      "q": "Ñaata bant yu ngëm (iimaan) am na ci lislaam ?",
+      "o": [
+        "Ñeent",
+        "Juróom",
+        "Juróom-benn",
+        "Juróom-ñaar"
+      ]
+    },
+    "20": {
+      "q": "Kan lañu jàppe yonnent bi njëkk ci lislaam ?",
+      "o": [
+        "Nuh",
+        "Aadama",
+        "Ibrahima",
+        "Musaa"
+      ]
+    },
+    "21": {
+      "q": "Ban yonnent lañu jàppale ak tabaxub Kaaba bi ?",
+      "o": [
+        "Musaa",
+        "Ibrahima",
+        "Iisaa",
+        "Nuh"
+      ]
+    },
+    "22": {
+      "q": "Naka lañu tudde kàddu ak jëf yu yonnent Muhammad (ﷺ) ?",
+      "o": [
+        "Fiqh",
+        "Sunna",
+        "Chariia",
+        "Tafsiir"
+      ]
+    },
+    "23": {
+      "q": "Naka lañu tudde yoonu lislaam ?",
+      "o": [
+        "Chariia",
+        "Sunna",
+        "Hadiis",
+        "Tawhiid"
+      ]
+    },
+    "24": {
+      "q": "Lan mooy baatu \"tawhiid\" ?",
+      "o": [
+        "Ñaan",
+        "Bennoo Yàlla",
+        "Woor",
+        "Sarax"
+      ]
+    },
+    "25": {
+      "q": "Lan lañu tudde léebi kàddu yu yonnent Muhammad (ﷺ) ?",
+      "o": [
+        "Simu yi",
+        "Hadiis yi",
+        "Ayah yi",
+        "Bant yi"
+      ]
+    },
+    "26": {
+      "q": "Ñaata ñaan yu farata ci bis bu nekk ?",
+      "o": [
+        "Ñett",
+        "Ñeent",
+        "Juróom",
+        "Juróom-benn"
+      ]
+    },
+    "27": {
+      "q": "Naka lañu tudde setal gu farata ?",
+      "o": [
+        "Ndox (Wudu)",
+        "Woor",
+        "Sarax",
+        "Aj"
+      ]
+    },
+    "28": {
+      "q": "Ban ñaan mooy bi ci njëkk bis bi ?",
+      "o": [
+        "Tisbaar",
+        "Sabbaa (Fajr)",
+        "Takkusaan",
+        "Timis"
+      ]
+    },
+    "29": {
+      "q": "Ban ñaan mooy bi ci mujj bis bi ?",
+      "o": [
+        "Timis",
+        "Guddi (Ichaa)",
+        "Takkusaan",
+        "Tisbaar"
+      ]
+    },
+    "30": {
+      "q": "Ban waxtu lañuy def ñaanu Timis bi ?",
+      "o": [
+        "Ci sub",
+        "Ci digg-bis",
+        "Ci sowu jant",
+        "Ci guddi"
+      ]
+    },
+    "31": {
+      "q": "Ci ban weer la jullit yi di woor ?",
+      "o": [
+        "Chaabaan",
+        "Ramadaan",
+        "Muharram",
+        "Rajab"
+      ]
+    },
+    "32": {
+      "q": "Naka lañu tudde ñam bi ñuy lekk balaa sub ci Ramadaan ?",
+      "o": [
+        "Ftoor",
+        "Sahoor",
+        "Tarawih",
+        "Sarax"
+      ]
+    },
+    "33": {
+      "q": "Naka lañu tudde ñam bi ñuy fàjji woor bi ?",
+      "o": [
+        "Sahoor",
+        "Ftoor",
+        "Tarawih",
+        "Witr"
+      ]
+    },
+    "34": {
+      "q": "Naka lañu tudde ñaan yu guddi yu Ramadaan ?",
+      "o": [
+        "Tarawih",
+        "Witr",
+        "Duhaa",
+        "Tahajjud"
+      ]
+    },
+    "35": {
+      "q": "Ban màggal mooy mujjantalu Ramadaan ?",
+      "o": [
+        "Tabaski",
+        "Korite",
+        "Achuraa",
+        "Mawlid"
+      ]
+    },
+    "36": {
+      "q": "Ban màggal mooy fàttaliku sarax Ibrahima ?",
+      "o": [
+        "Korite",
+        "Tabaski",
+        "Achuraa",
+        "Mawlid"
+      ]
+    },
+    "37": {
+      "q": "Naka lañu tudde tukkib Makka ?",
+      "o": [
+        "Woor",
+        "Sarax",
+        "Aj",
+        "Salaa"
+      ]
+    },
+    "38": {
+      "q": "Ñaata yoon la jullit war a def aj su tuuti ?",
+      "o": [
+        "Benn yoon",
+        "Benn yoon ci giir gi su mën",
+        "At bu nekk",
+        "Juróom yoon"
+      ]
+    },
+    "39": {
+      "q": "Naka lañu tudde aj bu tuuti bi, bu mën a def waxtu wu nekk ?",
+      "o": [
+        "Aj",
+        "Umra",
+        "Tawaaf",
+        "Sa'i"
+      ]
+    },
+    "40": {
+      "q": "Naka lañu tudde wër ci wetu Kaaba bi ?",
+      "o": [
+        "Sa'i",
+        "Tawaaf",
+        "Wuquf",
+        "Ramy"
+      ]
+    },
+    "41": {
+      "q": "Kan lañu bàyyi ci woor Ramadaan ngir wér-gi-yaram ?",
+      "o": [
+        "Kenn",
+        "Way jangor yi",
+        "Xale yi rekk",
+        "Jigéen ñi rekk"
+      ]
+    },
+    "42": {
+      "q": "Naka lañu tudde woote gu ñaan bi ?",
+      "o": [
+        "Xutba",
+        "Adaan",
+        "Tafsiir",
+        "Sikar"
+      ]
+    },
+    "43": {
+      "q": "Kan mooy woote adaan bi ci aada ?",
+      "o": [
+        "Imaam bi",
+        "Mu'adin bi",
+        "Kalif bi",
+        "Xam-xamkat bi"
+      ]
+    },
+    "44": {
+      "q": "Naka lañu tudde ki jiite ñaanu mbooloo ?",
+      "o": [
+        "Mu'adin bi",
+        "Imaam bi",
+        "Kalif bi",
+        "Hafiz bi"
+      ]
+    },
+    "45": {
+      "q": "Ban bis ci ayubés la ñaanu Àjjuma di am ?",
+      "o": [
+        "Alxamis",
+        "Àjjuma",
+        "Gaawu",
+        "Dibéer"
+      ]
+    },
+    "46": {
+      "q": "Naka lañu tudde waxtaan wi virub ñaanu Àjjuma ?",
+      "o": [
+        "Sikar",
+        "Xutba",
+        "Tafsiir",
+        "Adaan"
+      ]
+    },
+    "47": {
+      "q": "Naka lañu tudde ku fàbbi Alxuraan bépp ?",
+      "o": [
+        "Imaam",
+        "Hafiz",
+        "Mufti",
+        "Séex"
+      ]
+    },
+    "48": {
+      "q": "Lan mooy sarax bu boole, bu wuute ak sarax farata bi ?",
+      "o": [
+        "Sarax (Sadaqa)",
+        "Waqf",
+        "Fidya",
+        "Kaffaara"
+      ]
+    },
+    "49": {
+      "q": "Naka lañu tudde ñaan wala fàttaliku Yàlla ?",
+      "o": [
+        "Sikar",
+        "Tafsiir",
+        "Fiqh",
+        "Hadiis"
+      ]
+    },
+    "50": {
+      "q": "Ñaata rakaa (simili) am na ñaanu Sabbaa (Fajr) ?",
+      "o": [
+        "Ñaar",
+        "Ñett",
+        "Ñeent",
+        "Juróom"
+      ]
+    },
+    "51": {
+      "q": "Ñaata simu am na Alxuraan ?",
+      "o": [
+        "100",
+        "104",
+        "114",
+        "120"
+      ]
+    },
+    "52": {
+      "q": "Ban simu mooy gu gudd gi ci Alxuraan ?",
+      "o": [
+        "Al-Faatiha",
+        "Al-Baqara",
+        "Yaasiin",
+        "Al-Ixlaas"
+      ]
+    },
+    "53": {
+      "q": "Ban simu mooy gu gàtt gi ci Alxuraan ?",
+      "o": [
+        "Al-Ixlaas",
+        "Al-Kawtar",
+        "An-Nasr",
+        "Al-Asr"
+      ]
+    },
+    "54": {
+      "q": "Ban simu mooy bu njëkk ci Alxuraan ?",
+      "o": [
+        "Al-Baqara",
+        "Al-Faatiha",
+        "Al-Ixlaas",
+        "Yaasiin"
+      ]
+    },
+    "55": {
+      "q": "Ban simu mooy bu mujj ci Alxuraan ?",
+      "o": [
+        "Al-Falaq",
+        "An-Naas",
+        "Al-Ixlaas",
+        "Al-Kawtar"
+      ]
+    },
+    "56": {
+      "q": "Ñaata ayah am na simu Al-Faatiha ?",
+      "o": [
+        "Juróom",
+        "Juróom-ñaar",
+        "Juróom-ñeent",
+        "Fukk-ak-benn"
+      ]
+    },
+    "57": {
+      "q": "Naka lañu tudde bennels ci Alxuraan ?",
+      "o": [
+        "Simu",
+        "Ayah",
+        "Juz",
+        "Hizb"
+      ]
+    },
+    "58": {
+      "q": "Ci ñaata juz lañu xaajale Alxuraan ci aada ?",
+      "o": [
+        "20",
+        "25",
+        "30",
+        "40"
+      ]
+    },
+    "59": {
+      "q": "Ci ban làkk la Alxuraan wàcce ?",
+      "o": [
+        "Persaan",
+        "Araab",
+        "Arameyeŋ",
+        "Ebre"
+      ]
+    },
+    "60": {
+      "q": "Ci ñaata at la wàccewu Alxuraan yàgg ?",
+      "o": [
+        "10 at",
+        "15 at",
+        "23 at",
+        "30 at"
+      ]
+    },
+    "61": {
+      "q": "Naka lañu tudde simu yi wàcce balaa hijra bi ?",
+      "o": [
+        "Yu Madiina",
+        "Yu Makka",
+        "Yu yàgg",
+        "Yu njëkk"
+      ]
+    },
+    "62": {
+      "q": "Naka lañu tudde simu yi wàcce ginnaaw hijra bi ?",
+      "o": [
+        "Yu Makka",
+        "Yu Madiina",
+        "Yu yagsi",
+        "Yu ñaareel"
+      ]
+    },
+    "63": {
+      "q": "Ban simu jël tur ci mala, nag wi ?",
+      "o": [
+        "Al-An'aam",
+        "Al-Baqara",
+        "An-Naml",
+        "Al-Fiil"
+      ]
+    },
+    "64": {
+      "q": "Ban simu jël tur ci njabootu Maryam ?",
+      "o": [
+        "Maryam",
+        "Al-Imraan",
+        "An-Nisaa",
+        "Al-Ahzaab"
+      ]
+    },
+    "65": {
+      "q": "Ban simu jébbal nañu Maryam, yaayu Iisaa ?",
+      "o": [
+        "Al-Faatiha",
+        "Maryam",
+        "Al-Kahf",
+        "Yaasiin"
+      ]
+    },
+    "66": {
+      "q": "Ban yonnent mooy joxe tur wu simu 71 ?",
+      "o": [
+        "Nuh",
+        "Yunus",
+        "Hud",
+        "Saalix"
+      ]
+    },
+    "67": {
+      "q": "Ban simu di léeb taariixu Yuusuf ?",
+      "o": [
+        "Yuusuf",
+        "Yunus",
+        "Hud",
+        "Ibrahima"
+      ]
+    },
+    "68": {
+      "q": "Naka lañu tudde firi/koomeent Alxuraan ?",
+      "o": [
+        "Hadiis",
+        "Tafsiir",
+        "Fiqh",
+        "Sunna"
+      ]
+    },
+    "69": {
+      "q": "Ban simu lañuy woowe \"xolu Alxuraan\" ?",
+      "o": [
+        "Al-Faatiha",
+        "Yaasiin",
+        "Al-Baqara",
+        "Al-Ixlaas"
+      ]
+    },
+    "70": {
+      "q": "Ban simu jébbal nañu bennoo Yàlla bu wér ?",
+      "o": [
+        "Al-Faatiha",
+        "Al-Ixlaas",
+        "Al-Baqara",
+        "An-Naas"
+      ]
+    },
+    "71": {
+      "q": "Ñaata ayah am na simu Al-Baqara ?",
+      "o": [
+        "176",
+        "200",
+        "286",
+        "300"
+      ]
+    },
+    "72": {
+      "q": "Ban guddi lañu jàppe guddig wàccewu Alxuraan ?",
+      "o": [
+        "Laylatul-Qadr",
+        "Laylatul-Miraaj",
+        "Laylatul-Baraa",
+        "Korite"
+      ]
+    },
+    "73": {
+      "q": "Ci ban jamono ci Ramadaan lañuy seet Laylatul-Qadr ?",
+      "o": [
+        "10 bis yu njëkk",
+        "10 bis yu mujj",
+        "Digg weer wi",
+        "Bis bu njëkk"
+      ]
+    },
+    "74": {
+      "q": "Ban simu lañuy jàng ci rakaa bu nekk ?",
+      "o": [
+        "Al-Baqara",
+        "Al-Faatiha",
+        "Yaasiin",
+        "Al-Kahf"
+      ]
+    },
+    "75": {
+      "q": "Ban yonnent lañu tudd bu bare ci Alxuraan ?",
+      "o": [
+        "Muhammad",
+        "Musaa",
+        "Iisaa",
+        "Ibrahima"
+      ]
+    },
+    "76": {
+      "q": "Ban simu wax ci kaaba bi ak i taxawaay ?",
+      "o": [
+        "Al-Kahf",
+        "Al-Fiil",
+        "Al-Buruuj",
+        "Al-Qamar"
+      ]
+    },
+    "77": {
+      "q": "Ban simu lañu digal jàng bis Àjjuma ci aada ?",
+      "o": [
+        "Al-Kahf",
+        "Al-Mulk",
+        "Yaa-Siin",
+        "Al-Waaqi'a"
+      ]
+    },
+    "78": {
+      "q": "Naka lañu tudde jàngug Alxuraan gu neex a dégg ?",
+      "o": [
+        "Tajwiid",
+        "Tafsiir",
+        "Fiqh",
+        "Hadiis"
+      ]
+    },
+    "79": {
+      "q": "Ban simu jël tur ci mala mu ndaw, tegtal ?",
+      "o": [
+        "An-Naml (ndayaan)",
+        "Al-Fiil (ñaay)",
+        "Al-Baqara (nag)",
+        "An-Nahl (mbotit)"
+      ]
+    },
+    "80": {
+      "q": "Ban simu wax ci ñaay ?",
+      "o": [
+        "Al-Fiil",
+        "An-Naml",
+        "An-Nahl",
+        "Al-Ankabuut"
+      ]
+    },
+    "81": {
+      "q": "Ban simu jël tur ci safara ?",
+      "o": [
+        "An-Naml",
+        "Al-Ankabuut",
+        "An-Nahl",
+        "Al-Fiil"
+      ]
+    },
+    "82": {
+      "q": "Ban kalif moo topptoo dajaleg Alxuraan ci benn téere ?",
+      "o": [
+        "Abu Bakr",
+        "Umar",
+        "Usmaan",
+        "Ali"
+      ]
+    },
+    "83": {
+      "q": "Lan mooy baat bu njëkk wàcce ci Alxuraan ?",
+      "o": [
+        "Bismillah",
+        "Iqraa (Jàng)",
+        "Qul (Wax)",
+        "Alhamdulillah"
+      ]
+    },
+    "84": {
+      "q": "Ban kàddu di ubbi bar bu bare ci simu Alxuraan yi ?",
+      "o": [
+        "Alhamdulillah",
+        "Bismillah ar-Rahmaan ar-Rahiim",
+        "Subhaanallah",
+        "Allahu Akbar"
+      ]
+    }
   }
 }

@@ -1,0 +1,86 @@
+<div class="relative min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white overflow-hidden">
+  <svg class="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dashboardPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+        <g stroke="#0d9488" stroke-width="1.5" fill="none">
+          <path d="M40 5 L52 20 L40 35 L28 20 Z" />
+          <path d="M40 45 L52 60 L40 75 L28 60 Z" />
+          <path d="M5 40 L20 28 L35 40 L20 52 Z" />
+          <path d="M45 40 L60 28 L75 40 L60 52 Z" />
+          <circle cx="40" cy="40" r="6" />
+        </g>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#dashboardPattern)" />
+  </svg>
+
+  <div class="relative max-w-2xl mx-auto p-4 sm:p-6 py-8 sm:py-10">
+    <div class="text-center mb-8">
+      <div class="relative inline-block mb-3">
+        <div class="absolute inset-0 bg-emerald-400 rounded-full blur-xl opacity-30 scale-125"></div>
+        <img src="logo.png" alt="Logo Jàkka" class="relative w-14 h-14 mx-auto object-contain" />
+      </div>
+      <h1 class="text-xl sm:text-2xl font-bold text-gray-800">{{ 'DASHBOARD.GREETING' | translate }}</h1>
+    </div>
+
+    <!-- Carte : Prochaine prière -->
+    <div class="relative bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl shadow-lg shadow-emerald-200 p-6 sm:p-7 text-white mb-5 overflow-hidden">
+      <div class="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white/10"></div>
+      <div class="absolute -bottom-10 -left-6 w-24 h-24 rounded-full bg-white/10"></div>
+
+      <p class="relative text-xs sm:text-sm text-emerald-50 mb-2 flex items-center gap-1.5 font-medium">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+        {{ 'DASHBOARD.NEXT_PRAYER_CARD' | translate }}
+      </p>
+
+      @if (prayerTimesService.nextPrayer(); as next) {
+        <p class="relative text-3xl sm:text-4xl font-bold mb-1">{{ next.prayer.label }}</p>
+        <p class="relative text-base sm:text-lg text-emerald-50 mb-1">{{ next.prayer.time }}</p>
+        <p class="relative text-sm text-emerald-50 mb-4">{{ 'DASHBOARD.IN' | translate }} {{ formatMinutesLeft(next.minutesLeft) }}</p>
+      } @else {
+        <p class="relative text-sm text-emerald-50 mb-4 animate-pulse">{{ 'HORAIRES.LOADING' | translate }}</p>
+      }
+
+      <a routerLink="/horaires-prieres" class="relative inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold bg-white/15 hover:bg-white/25 transition-colors px-3.5 py-2 rounded-full">
+        {{ 'DASHBOARD.VIEW_ALL_PRAYERS' | translate }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+      </a>
+    </div>
+
+    <!-- Carte : Verset du jour -->
+    <div class="bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-6 sm:p-7 mb-5 hover:shadow-md transition-shadow">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="flex items-center justify-center w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" /></svg>
+        </div>
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">{{ 'DASHBOARD.VERSE_OF_DAY' | translate }}</p>
+      </div>
+
+      @if (verseLoading()) {
+        <p class="text-gray-400 text-sm animate-pulse">{{ 'DASHBOARD.LOADING_VERSE' | translate }}</p>
+      } @else {
+        <p class="text-xl sm:text-2xl text-emerald-700 mb-3 text-right leading-loose" dir="rtl">{{ verseArabe() }}</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-3">{{ verseFrancais() }}</p>
+        <div class="flex items-center justify-between">
+          <p class="text-xs text-gray-400">{{ verseSourateNom() }} — {{ verseNumero() }}</p>
+          <a [routerLink]="['/sourates', verseSourateId()]" class="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-emerald-700 hover:underline">
+            {{ 'DASHBOARD.READ_SOURATE' | translate }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+          </a>
+        </div>
+      }
+    </div>
+
+    <!-- Carte : Motivation du jour -->
+    <div class="relative bg-white rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-50 p-6 sm:p-7 overflow-hidden hover:shadow-md transition-shadow">
+      <span class="absolute top-3 right-4 text-5xl text-emerald-50 font-serif select-none leading-none">"</span>
+      <div class="relative flex items-center gap-2 mb-4">
+        <div class="flex items-center justify-center w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4" /><path d="M5 10a7 7 0 0 1 14 0v3a7 7 0 0 1-14 0Z" /><path d="M8 21h8" /></svg>
+        </div>
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">{{ 'DASHBOARD.MOTIVATION_OF_DAY' | translate }}</p>
+      </div>
+      <p class="relative text-sm sm:text-base text-gray-700 leading-relaxed italic">{{ todayMotivation() }}</p>
+    </div>
+  </div>
+</div>
