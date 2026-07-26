@@ -1,21 +1,25 @@
 import { Component, inject, signal, computed } from '@angular/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { HijriService, CalendarDay, ImportantDate } from '../../../core/services/hijri';
+import { LanguageService } from '../../../core/services/language';
 
 @Component({
   selector: 'app-calendrier',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './calendrier.html',
   styleUrl: './calendrier.scss',
 })
 export class Calendrier {
   private hijriService = inject(HijriService);
+  private translate = inject(TranslateService);
+  private languageService = inject(LanguageService);
 
   private todayHijri = this.hijriService.gregorianToHijri(new Date());
 
   viewedYear = signal<number>(this.todayHijri.year);
   viewedMonth = signal<number>(this.todayHijri.month);
 
-  monthName = computed(() => this.hijriService.monthNames[this.viewedMonth() - 1]);
+  monthName = computed(() => this.hijriService.monthNames()[this.viewedMonth() - 1]);
   days = computed<CalendarDay[]>(() => this.hijriService.getMonthGrid(this.viewedYear(), this.viewedMonth()));
 
   leadingBlanks = computed<number[]>(() => {
@@ -26,6 +30,7 @@ export class Calendrier {
   });
 
   importantDates = computed<ImportantDate[]>(() => {
+    this.languageService.currentLang();
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const events = this.hijriService.getImportantDates(this.viewedYear());
@@ -34,7 +39,15 @@ export class Calendrier {
       .sort((a, b) => a.gregorianDate.getTime() - b.gregorianDate.getTime());
   });
 
-  weekDays = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+  weekDays = computed<string[]>(() => {
+    this.languageService.currentLang();
+    return this.translate.instant('CALENDRIER.WEEKDAYS') as string[];
+  });
+
+  private locale = computed<string>(() => {
+    this.languageService.currentLang();
+    return this.translate.instant('CALENDRIER.LOCALE') as string;
+  });
 
   previousMonth(): void {
     let m = this.viewedMonth() - 1;
@@ -58,10 +71,11 @@ export class Calendrier {
   }
 
   formatShort(date: Date): string {
-    return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+    return date.toLocaleDateString(this.locale(), { day: 'numeric', month: 'short' });
   }
 
+
   formatFull(date: Date): string {
-    return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+    return date.toLocaleDateString(this.locale(), { day: 'numeric', month: 'long', year: 'numeric' });
   }
 }

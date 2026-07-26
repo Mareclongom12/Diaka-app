@@ -106,7 +106,9 @@
     "NO_EVENTS": "Amul xew-xew ci at mii di ñëw.",
     "FOOTER_NOTE": "Bis yu hijri dañu leen xayma ak nappax, mën nañu wéy ±1 fan wrt li ñu gis weer wi ci saa yu bare.",
     "PREV_MONTH_ARIA": "Weer wi jiitu",
-    "NEXT_MONTH_ARIA": "Weer wi topp"
+    "NEXT_MONTH_ARIA": "Weer wi topp",
+    "WEEKDAYS": ["Dib", "Alt", "Tal", "Àla", "Alx", "Àjj", "Ase"],
+    "LOCALE": "fr-FR"
   },
   "SOURATES": {
     "TITLE": "Simu yi",
@@ -197,6 +199,38 @@
     "8": "« Ku jël yoon ngir seet xam-xam, Yàlla dana ko woyofal yoon ci Aljana. » — Hadiis, Muslim moo ko wone",
     "9": "« Jaamu sa Boroom ba kera wér gi ñëw ci yow. » (Simu Al-Hijr, 15:99)",
     "10": "« Jëf yi seen njariñ jëm ci coobare gi. » — Hadiis, Al-Bukhaari moo ko wone"
+  },
+  "HIJRI_MONTHS": {
+    "1": "Muharram", "2": "Safar", "3": "Rabi al-Awwal", "4": "Rabi ath-Thani",
+    "5": "Jumaada al-Uula", "6": "Jumaada ath-Thaaniya", "7": "Rajab", "8": "Chaabaan",
+    "9": "Ramadaan", "10": "Chawwaal", "11": "Zul-Qi'da", "12": "Zul-Hijja"
+  },
+  "HIJRI_EVENTS": {
+    "1": { "name": "Atum bu bees Hijri", "desc": "Tambalig atum hijri (Muharram)" },
+    "2": { "name": "Achuraa", "desc": "Bis bu ñu digal woor" },
+    "3": { "name": "Mawlid an-Nabawi", "desc": "Juddug Yonnent bi ﷺ" },
+    "4": { "name": "Tambalig Ramadaan", "desc": "Tambalig weer woor bi" },
+    "5": { "name": "Guddig Al-Qadr (lu jege)", "desc": "Guddi Coobare (10 guddi yu mujj)" },
+    "6": { "name": "Korite", "desc": "Màggalu fàjjug woor bi" },
+    "7": { "name": "Bisu Arafa", "desc": "Guddig Tabaski" },
+    "8": { "name": "Tabaski", "desc": "Màggalu sarax bi" }
+  },
+  "WUDU_STEPS": {
+    "1": { "title": "Njëkkalin (Niyyah)", "desc": "Def ci sa xol njëkkalin ngir def ndox ci ñaan. Njëkkalin bi warul a wax ci kaw, mu nekk ci xol bi." },
+    "2": { "title": "Wax Bismillah", "desc": "« Bismillah » (Ci turu Yàlla) balaa nga tambali." },
+    "3": { "title": "Raxas loxo yi", "desc": "Raxas ñaari loxo yi ba ci ponku, tambali ci loxob ndeyjoor, xool bu baax digg baaraam yi." },
+    "4": { "title": "Setal gémmiñ", "desc": "Jël ndox ci gémmiñ, wéral ko te sooxati ko." },
+    "5": { "title": "Setal bakkan", "desc": "Yóbbu ndox ci fitu bakkan te sooxatiwaale (bu ko jariwul)." },
+    "6": { "title": "Raxas kanam", "desc": "Ci kaw kow ba ci suuf boppu, ak ci nopp bu nekk ba ci beneen." },
+    "7": { "title": "Raxas loxo ba ci konkoor", "desc": "Tambali ci loxob ndeyjoor, ginnaaw loxob càmmoñ, ba ci konkoor yi." },
+    "8": { "title": "Mas bopp (Mash)", "desc": "Wàññi loxo yu réew ci kanamu bopp ba ginnaaw, delloosi ci kanam." },
+    "9": { "title": "Mas nopp yi", "desc": "Ak baaraami index yi ci biir ak feccax yi ci ginnaaw, ci benn jëf ginnaaw ba nga masaat bopp." },
+    "10": { "title": "Raxas tànk ba ci kànket", "desc": "Tambali ci tànku ndeyjoor, ginnaaw tànku càmmoñ, ba ci kànket yi, setal digg baaraam tànk yi." },
+    "11": { "title": "Ñaan bu mujj", "desc": "Ginnaaw ndox mi, ñu digal jàng Chahaada ak benn ñaan bu jagleel." }
+  },
+  "WUDU_DUA": {
+    "translit": "Achhadou an la ilaha illa Allah wahdahou la charika lah, wa achhadou anna Mouhammadan 'abdouhou wa rassoulouh",
+    "trad": "Manaa naa ne amul yàlla lu dul Yàlla, moom rekk te amul kenn ku bokk ak moom, te manaa naa ne Muhammad jaamam la te ndawam la."
   },
   "COMMON": {
     "LANGUAGE": "Làkk"

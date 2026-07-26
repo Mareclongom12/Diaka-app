@@ -106,7 +106,9 @@
     "NO_EVENTS": "No upcoming events this year.",
     "FOOTER_NOTE": "Hijri dates are calculated algorithmically and may vary by ±1 day from the official moon sighting depending on the country.",
     "PREV_MONTH_ARIA": "Previous month",
-    "NEXT_MONTH_ARIA": "Next month"
+    "NEXT_MONTH_ARIA": "Next month",
+    "WEEKDAYS": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "LOCALE": "en-US"
   },
   "SOURATES": {
     "TITLE": "Surahs",
@@ -197,6 +199,38 @@
     "8": "\"Whoever takes a path seeking knowledge, Allah makes easy for him a path to Paradise.\" — Hadith reported by Muslim",
     "9": "\"And worship your Lord until certainty comes to you.\" (Surah Al-Hijr, 15:99)",
     "10": "\"Actions are but by intentions.\" — Hadith reported by Al-Bukhari"
+  },
+  "HIJRI_MONTHS": {
+    "1": "Muharram", "2": "Safar", "3": "Rabi al-Awwal", "4": "Rabi al-Thani",
+    "5": "Jumada al-Ula", "6": "Jumada al-Thania", "7": "Rajab", "8": "Shaaban",
+    "9": "Ramadan", "10": "Shawwal", "11": "Dhu al-Qi'dah", "12": "Dhu al-Hijjah"
+  },
+  "HIJRI_EVENTS": {
+    "1": { "name": "Hijri New Year", "desc": "Beginning of the Hijri year (Muharram)" },
+    "2": { "name": "Ashura", "desc": "Recommended day of fasting" },
+    "3": { "name": "Mawlid an-Nabawi", "desc": "Birth of the Prophet ﷺ" },
+    "4": { "name": "Start of Ramadan", "desc": "Beginning of the month of fasting" },
+    "5": { "name": "Night of Al-Qadr (approx.)", "desc": "Night of Decree (last 10 nights)" },
+    "6": { "name": "Eid al-Fitr", "desc": "Feast of breaking the fast" },
+    "7": { "name": "Day of Arafat", "desc": "Eve of Eid al-Adha" },
+    "8": { "name": "Eid al-Adha", "desc": "Feast of sacrifice" }
+  },
+  "WUDU_STEPS": {
+    "1": { "title": "The intention (Niyyah)", "desc": "Form in your heart the intention to perform ablution for prayer. The intention doesn't need to be spoken aloud, it is in the heart." },
+    "2": { "title": "Say Bismillah", "desc": "\"Bismillah\" (In the name of Allah) before starting." },
+    "3": { "title": "Wash the hands", "desc": "Wash both hands up to the wrists, starting with the right hand, making sure to clean between the fingers." },
+    "4": { "title": "Rinse the mouth", "desc": "Take water into the mouth, swish it around, then spit it out." },
+    "5": { "title": "Clean the nose", "desc": "Sniff water into the nostrils then blow it out (without swallowing)." },
+    "6": { "title": "Wash the face", "desc": "From the top of the forehead to the bottom of the chin, and from one ear to the other." },
+    "7": { "title": "Wash the arms up to the elbows", "desc": "Start with the right arm, then the left arm, including the elbows." },
+    "8": { "title": "Wipe the head (Mash)", "desc": "Pass wet hands from the front to the back of the head, then back to the front." },
+    "9": { "title": "Wipe the ears", "desc": "With index fingers inside and thumbs behind, in one motion right after wiping the head." },
+    "10": { "title": "Wash the feet up to the ankles", "desc": "Start with the right foot, then the left foot, including the ankles, cleaning between the toes." },
+    "11": { "title": "Final invocation", "desc": "After ablution, it is recommended to recite the Shahada and a dedicated invocation." }
+  },
+  "WUDU_DUA": {
+    "translit": "Ashhadu an la ilaha illa Allah wahdahu la sharika lah, wa ashhadu anna Muhammadan 'abduhu wa rasuluh",
+    "trad": "I bear witness that there is no god but Allah, alone without partner, and I bear witness that Muhammad is His servant and messenger."
   },
   "COMMON": {
     "LANGUAGE": "Language"

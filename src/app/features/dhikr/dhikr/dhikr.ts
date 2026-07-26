@@ -1,9 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { DhikrService } from '../../../core/services/dhikr';
 
 @Component({
   selector: 'app-dhikr',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './dhikr.html',
   styleUrl: './dhikr.scss',
 })

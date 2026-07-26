@@ -1,6 +1,11 @@
-<div class="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white touch-pan-y">
+<div class="absolute top-[-6rem] right-[-4rem] w-72 h-72 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-[-8rem] left-[-6rem] w-80 h-80 bg-teal-200/30 rounded-full blur-3xl pointer-events-none"></div>
+
+<div class="relative min-h-screen bg-gradient-to-br from-emerald-100 via-white to-teal-50 touch-pan-y overflow-hidden">
+  <div class="absolute top-[-6rem] right-[-4rem] w-72 h-72 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-[-8rem] left-[-6rem] w-80 h-80 bg-teal-200/30 rounded-full blur-3xl pointer-events-none"></div>
   <div class="max-w-2xl mx-auto p-4 sm:p-6 py-8 sm:py-10">
-    <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center">Compteur de Zikr</h1>
+    <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center">{{ 'DHIKR.TITLE' | translate }}</h1>
 
     <!-- Sélection du dhikr -->
     <div class="flex flex-wrap justify-center gap-2 mb-6">
@@ -32,7 +37,7 @@
       <button
         (click)="tap()"
         class="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto mb-6 flex items-center justify-center select-none active:scale-95 transition-transform"
-        aria-label="Compter un dhikr"
+        [attr.aria-label]="'DHIKR.TAP_ARIA' | translate"
       >
         <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 200 200">
           <circle cx="100" cy="100" r="90" fill="none" stroke="#e5e7eb" stroke-width="10" />
@@ -53,12 +58,12 @@
       </button>
 
       @if (dhikrService.isTargetReached()) {
-        <p class="text-amber-600 font-semibold text-sm mb-4">✨ Objectif atteint, qu'Allah l'accepte !</p>
+        <p class="text-amber-600 font-semibold text-sm mb-4">{{ 'DHIKR.TARGET_REACHED' | translate }}</p>
       }
 
       <!-- Choix de l'objectif -->
       <div class="flex items-center justify-center gap-2 mb-5">
-        <span class="text-xs text-gray-400 font-medium mr-1">Objectif :</span>
+        <span class="text-xs text-gray-400 font-medium mr-1">{{ 'DHIKR.TARGET_LABEL' | translate }}</span>
         @for (t of targetOptions; track t) {
           <button
             (click)="setTarget(t)"
@@ -76,18 +81,18 @@
       </div>
 
       <button (click)="resetSession()" class="text-xs sm:text-sm text-gray-400 hover:text-red-500 transition-colors font-medium">
-        Réinitialiser cette session
+        {{ 'DHIKR.RESET_SESSION' | translate }}
       </button>
     </div>
 
     <!-- Total cumulé -->
     <div class="mt-5 flex items-center justify-between gap-3 p-4 bg-white rounded-xl border border-emerald-50 shadow-sm">
       <div>
-        <p class="text-xs text-gray-400">Total cumulé pour "{{ dhikrService.selectedPhrase().translitteration }}"</p>
+        <p class="text-xs text-gray-400">{{ 'DHIKR.TOTAL_FOR' | translate }} "{{ dhikrService.selectedPhrase().translitteration }}"</p>
         <p class="text-lg font-bold text-emerald-700">{{ dhikrService.totalForSelected() }}</p>
       </div>
       <button (click)="askResetTotal()" class="text-xs text-gray-400 hover:text-red-500 transition-colors font-medium shrink-0">
-        Remettre à zéro
+        {{ 'DHIKR.RESET_TOTAL' | translate }}
       </button>
     </div>
   </div>
@@ -98,14 +103,14 @@
         <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-red-50 flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg>
         </div>
-        <p class="font-semibold text-gray-800 mb-1">Remettre le total à zéro ?</p>
-        <p class="text-sm text-gray-500 mb-6">Le total cumulé pour "{{ dhikrService.selectedPhrase().translitteration }}" sera définitivement effacé.</p>
+        <p class="font-semibold text-gray-800 mb-1">{{ 'DHIKR.RESET_MODAL_TITLE' | translate }}</p>
+        <p class="text-sm text-gray-500 mb-6">{{ 'DHIKR.RESET_MODAL_TEXT' | translate }} "{{ dhikrService.selectedPhrase().translitteration }}" {{ 'DHIKR.RESET_MODAL_TEXT_END' | translate }}</p>
         <div class="flex gap-3">
           <button (click)="cancelResetTotal()" class="flex-1 py-2.5 rounded-xl font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors">
-            Non
+            {{ 'DHIKR.NO' | translate }}
           </button>
           <button (click)="confirmResetTotal()" class="flex-1 py-2.5 rounded-xl font-semibold text-white bg-red-600 hover:bg-red-700 transition-colors">
-            Oui
+            {{ 'DHIKR.YES' | translate }}
           </button>
         </div>
       </div>

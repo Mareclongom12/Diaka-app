@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject, computed } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from './language';
 
 export interface HijriDate {
   year: number;
@@ -20,15 +22,27 @@ export interface ImportantDate {
   gregorianDate: Date;
 }
 
-const HIJRI_MONTH_NAMES = [
-  'Mouharram', 'Safar', 'Rabi al-Awwal', 'Rabi ath-Thani',
-  "Joumada al-Oula", 'Joumada ath-Thania', 'Rajab', 'Chaabane',
-  'Ramadan', 'Chawwal', "Dhou al-Qi'da", 'Dhou al-Hijja',
+const EVENTS_META = [
+  { key: '1', month: 1, day: 1 },
+  { key: '2', month: 1, day: 10 },
+  { key: '3', month: 3, day: 12 },
+  { key: '4', month: 9, day: 1 },
+  { key: '5', month: 9, day: 27 },
+  { key: '6', month: 10, day: 1 },
+  { key: '7', month: 12, day: 9 },
+  { key: '8', month: 12, day: 10 },
 ];
 
 @Injectable({ providedIn: 'root' })
 export class HijriService {
-  monthNames = HIJRI_MONTH_NAMES;
+  private translate = inject(TranslateService);
+  private languageService = inject(LanguageService);
+
+  monthNames = computed<string[]>(() => {
+    this.languageService.currentLang();
+    const names = this.translate.instant('HIJRI_MONTHS');
+    return Array.from({ length: 12 }, (_, i) => names[String(i + 1)]);
+  });
 
   private gregorianToJD(y: number, m: number, d: number): number {
     const a = Math.floor((14 - m) / 12);
@@ -100,22 +114,12 @@ export class HijriService {
   }
 
   getImportantDates(hijriYear: number): ImportantDate[] {
-    const events: { name: string; month: number; day: number; description: string }[] = [
-      { name: 'Nouvel An Hijri', month: 1, day: 1, description: "Début de l'année hijri (Mouharram)" },
-      { name: 'Achoura', month: 1, day: 10, description: 'Jour de jeûne recommandé' },
-      { name: 'Mawlid an-Nabawi', month: 3, day: 12, description: 'Naissance du Prophète ﷺ' },
-      { name: 'Début du Ramadan', month: 9, day: 1, description: 'Début du mois de jeûne' },
-      { name: "Nuit d'Al-Qadr (approx.)", month: 9, day: 27, description: 'Nuit du Destin (10 dernières nuits)' },
-      { name: 'Aïd al-Fitr', month: 10, day: 1, description: 'Fête de la rupture du jeûne' },
-      { name: "Journée d'Arafat", month: 12, day: 9, description: "Veille de l'Aïd al-Adha" },
-      { name: 'Aïd al-Adha', month: 12, day: 10, description: 'Fête du sacrifice' },
-    ];
-
-    return events.map(e => ({
-      name: e.name,
+    const events = this.translate.instant('HIJRI_EVENTS');
+    return EVENTS_META.map(e => ({
+      name: events[e.key].name,
       hijriMonth: e.month,
       hijriDay: e.day,
-      description: e.description,
+      description: events[e.key].desc,
       gregorianDate: this.hijriToGregorian(hijriYear, e.month, e.day),
     }));
   }

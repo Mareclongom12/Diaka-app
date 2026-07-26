@@ -1,9 +1,10 @@
 import { Component, inject, signal, computed } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { WuduService } from '../../../core/services/wudu';
 
 @Component({
   selector: 'app-ablutions',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './ablutions.html',
   styleUrl: './ablutions.scss',
 })
@@ -12,13 +13,10 @@ export class Ablutions {
 
   currentIndex = signal(0);
   viewMode = signal<'guide' | 'liste'>('guide');
-
-  currentStep = computed(() => this.wuduService.steps[this.currentIndex()]);
-  progress = computed(() => ((this.currentIndex() + 1) / this.wuduService.steps.length) * 100);
+  currentStep = computed(() => this.wuduService.steps()[this.currentIndex()]);
+  progress = computed(() => ((this.currentIndex() + 1) / this.wuduService.steps().length) * 100);
   isFirst = computed(() => this.currentIndex() === 0);
-  isLast = computed(() => this.currentIndex() === this.wuduService.steps.length - 1);
-
-  // Gestion du swipe tactile
+  isLast = computed(() => this.currentIndex() === this.wuduService.steps().length - 1);
   private touchStartX = 0;
   private touchStartY = 0;
   swipeDirection = signal<'left' | 'right' | null>(null);
@@ -32,16 +30,13 @@ export class Ablutions {
     const deltaX = event.changedTouches[0].clientX - this.touchStartX;
     const deltaY = event.changedTouches[0].clientY - this.touchStartY;
 
-    // Ignore si le mouvement est plus vertical qu'horizontal (scroll de page)
     if (Math.abs(deltaX) < Math.abs(deltaY)) return;
 
     const threshold = 50;
     if (deltaX < -threshold) {
-      // Swipe vers la gauche → étape suivante
       this.triggerSwipe('left');
       this.next();
     } else if (deltaX > threshold) {
-      // Swipe vers la droite → étape précédente
       this.triggerSwipe('right');
       this.previous();
     }

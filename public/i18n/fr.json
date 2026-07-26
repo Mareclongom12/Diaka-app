@@ -106,7 +106,9 @@
     "NO_EVENTS": "Aucun évènement à venir cette année.",
     "FOOTER_NOTE": "Les dates hijri sont calculées de façon algorithmique et peuvent varier de ±1 jour par rapport à l'observation officielle de la lune selon les pays.",
     "PREV_MONTH_ARIA": "Mois précédent",
-    "NEXT_MONTH_ARIA": "Mois suivant"
+    "NEXT_MONTH_ARIA": "Mois suivant",
+    "WEEKDAYS": ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+    "LOCALE": "fr-FR"
   },
   "SOURATES": {
     "TITLE": "Les Sourates",
@@ -197,6 +199,38 @@
     "8": "« Quiconque emprunte un chemin cherchant du savoir, Allah lui facilite un chemin vers le Paradis. » — Hadith rapporté par Muslim",
     "9": "« Et adore ton Seigneur jusqu'à ce que te vienne la certitude. » (Sourate Al-Hijr, 15:99)",
     "10": "« Les actions ne valent que par leurs intentions. » — Hadith rapporté par Al-Bukhari"
+  },
+  "HIJRI_MONTHS": {
+    "1": "Mouharram", "2": "Safar", "3": "Rabi al-Awwal", "4": "Rabi ath-Thani",
+    "5": "Joumada al-Oula", "6": "Joumada ath-Thania", "7": "Rajab", "8": "Chaabane",
+    "9": "Ramadan", "10": "Chawwal", "11": "Dhou al-Qi'da", "12": "Dhou al-Hijja"
+  },
+  "HIJRI_EVENTS": {
+    "1": { "name": "Nouvel An Hijri", "desc": "Début de l'année hijri (Mouharram)" },
+    "2": { "name": "Achoura", "desc": "Jour de jeûne recommandé" },
+    "3": { "name": "Mawlid an-Nabawi", "desc": "Naissance du Prophète ﷺ" },
+    "4": { "name": "Début du Ramadan", "desc": "Début du mois de jeûne" },
+    "5": { "name": "Nuit d'Al-Qadr (approx.)", "desc": "Nuit du Destin (10 dernières nuits)" },
+    "6": { "name": "Aïd al-Fitr", "desc": "Fête de la rupture du jeûne" },
+    "7": { "name": "Journée d'Arafat", "desc": "Veille de l'Aïd al-Adha" },
+    "8": { "name": "Aïd al-Adha", "desc": "Fête du sacrifice" }
+  },
+  "WUDU_STEPS": {
+    "1": { "title": "L'intention (Niyyah)", "desc": "Forme dans ton cœur l'intention de faire les ablutions pour la prière. L'intention ne se prononce pas obligatoirement à voix haute, elle est dans le cœur." },
+    "2": { "title": "Dire Bismillah", "desc": "« Bismillah » (Au nom d'Allah) avant de commencer." },
+    "3": { "title": "Laver les mains", "desc": "Laver les deux mains jusqu'aux poignets, en commençant par la main droite, en veillant à bien nettoyer entre les doigts." },
+    "4": { "title": "Rincer la bouche", "desc": "Prendre de l'eau dans la bouche, la faire tourner puis la recracher." },
+    "5": { "title": "Nettoyer le nez", "desc": "Aspirer de l'eau dans les narines puis la faire ressortir en soufflant (sans avaler)." },
+    "6": { "title": "Laver le visage", "desc": "Du haut du front jusqu'au bas du menton, et d'une oreille à l'autre." },
+    "7": { "title": "Laver les bras jusqu'aux coudes", "desc": "Commencer par le bras droit, puis le bras gauche, jusqu'aux coudes inclus." },
+    "8": { "title": "Essuyer la tête (Mash)", "desc": "Passer les mains mouillées de l'avant vers l'arrière de la tête, puis revenir à l'avant." },
+    "9": { "title": "Essuyer les oreilles", "desc": "Avec les index à l'intérieur et les pouces derrière, en un seul geste après avoir essuyé la tête." },
+    "10": { "title": "Laver les pieds jusqu'aux chevilles", "desc": "Commencer par le pied droit, puis le pied gauche, jusqu'aux chevilles incluses, en nettoyant entre les orteils." },
+    "11": { "title": "Invocation finale", "desc": "Après les ablutions, il est recommandé de réciter la Chahada et une invocation dédiée." }
+  },
+  "WUDU_DUA": {
+    "translit": "Achhadou an la ilaha illa Allah wahdahou la charika lah, wa achhadou anna Mouhammadan 'abdouhou wa rassoulouh",
+    "trad": "J'atteste qu'il n'y a de divinité qu'Allah, Seul et sans associé, et j'atteste que Muhammad est Son serviteur et Son messager."
   },
   "COMMON": {
     "LANGUAGE": "Langue"
