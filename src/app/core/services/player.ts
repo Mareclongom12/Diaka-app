@@ -17,6 +17,7 @@ export class PlayerService {
   private audioElement: HTMLAudioElement = new Audio();
   private currentObjectUrl: string | null = null;
   private playToken = 0;
+  private knownGoodBitrate = new Map<string, number>();
 
   sourate = signal<PlayingSourate | null>(null);
   verses = signal<Verse[]>([]);
@@ -123,10 +124,18 @@ export class PlayerService {
   private async resolvePlayableUrl(numeroGlobal: number): Promise<string> {
     const identifier = this.reciterIdentifier();
 
+    const known = this.knownGoodBitrate.get(identifier);
+    if (known) {
+      return `https://cdn.islamic.network/quran/audio/${known}/${identifier}/${numeroGlobal}.mp3`;
+    }
+
     for (const bitrate of BITRATES) {
       const url = `https://cdn.islamic.network/quran/audio/${bitrate}/${identifier}/${numeroGlobal}.mp3`;
       const works = await this.testAudioUrl(url);
-      if (works) return url;
+      if (works) {
+        this.knownGoodBitrate.set(identifier, bitrate);
+        return url;
+      }
     }
 
     return `https://cdn.islamic.network/quran/audio/128/${identifier}/${numeroGlobal}.mp3`;
