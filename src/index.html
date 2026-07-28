@@ -7,9 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon-512.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EF1C2E74H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+
+    gtag('js', new Date());
+    gtag('config', 'G-8EF1C2E74H');
+  </script>
+
 </head>
 <body>
 <app-root></app-root>
+
 <script>
   // Bloque le zoom Ctrl+molette / Ctrl+trackpad
   window.addEventListener('wheel', function (e) {
@@ -29,6 +41,7 @@
   window.addEventListener('gesturestart', function (e) {
     e.preventDefault();
   });
+
   window.addEventListener('gesturechange', function (e) {
     e.preventDefault();
   });
