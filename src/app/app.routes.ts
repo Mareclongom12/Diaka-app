@@ -16,7 +16,7 @@ import { Dhikr } from './features/dhikr/dhikr/dhikr';
 import { HorairesPrieres } from './features/horaires-prieres/horaires-prieres/horaires-prieres';
 import { Ablutions } from './features/ablutions/ablutions/ablutions';
 import { Dashboard } from './features/dashboard/dashboard/dashboard';
-import { Livres } from './features/livres/livres/livres';
+
 //,
 export const routes: Routes = [
   { path: '', component: Landing, data: { hideNavbar: true } },
@@ -34,6 +34,4 @@ export const routes: Routes = [
   { path: 'ablutions', component: Ablutions, canActivate: [authGuard] },
   { path: 'dashboard', component: Dashboard, canActivate: [authGuard] },
 
-  { path: 'livres', component: Livres, canActivate: [authGuard] },
-  { path: '**', component: NotFound, data: { hideNavbar: true } },
-];
+  ];
